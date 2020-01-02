@@ -1,0 +1,18 @@
+struktura rada:
+    -.tex -glavni rad:
+               -uvod
+               -granice
+                    -R(3,3)
+                    -R(4,3)
+                    -R(p,q-1)+R(p-1,q)>=R(p,q) , stroga nejednakost za oba parna (dokaz)
+                    -remzi grafovi za poznate brojeve
+                    -poznate opste granice
+               -primene
+                    -Schurova T.
+               (verovatno ne)
+                    -van der Werden T.
+                    -Szemeredi T.
+                    -Erdos-Szekeresz T.
+                    -Erdos-Szekeresz T. o monotonim podnizovima
+                    -Erdoseve granice preko verovatnoce *(the book)
+    -.bibtex - resursi
