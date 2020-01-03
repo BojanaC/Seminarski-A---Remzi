@@ -1,1 +1,3 @@
-\contentsline {section}{\numberline {1}Uvod}{3}
+\contentsline {section}{\numberline {1}Uvod}{3}{section.1}
+\contentsline {section}{\numberline {2}Primene Remzijeve teoreme}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}\IeC {\v S}urova teorema}{4}{subsection.2.1}

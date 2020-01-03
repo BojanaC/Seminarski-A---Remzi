@@ -2,9 +2,18 @@
 \usepackage{lipsum}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
 \title{Granice za Remzijeve brojeve i primene}
 \date{15.1.2020}
 \author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
+
+\theoremstyle{definition}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{posledica}{Posledica}[teorema]
+\newtheorem{lema}[teorema]{Lema}
 \begin{document}
 	
 	\maketitle
@@ -21,6 +30,27 @@
 	
 	\lipsum[1]
 
+	\newpage
+	
+	\section{Primene Remzijeve teoreme}
+	
+	\subsection{Šurova teorema}
+	\begin{teorema} \label{sur}
+		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
+		\[
+		x + y = z \: \mathrm{i} \: \chi(x)= \chi(y)=\chi(z)
+		\]
+	\end{teorema}
+	
+	\begin{teorema} \label{sur2}
+		 Za sve $m \in \mathbb{N} \textbackslash \{0\}$ postoji neko $n_{0} \in \mathbb{N}$, takvo da za sve proste brojeve $p>n_{0}$ jednačina
+		\[
+		x^{m}+y^{m}\equiv z^{m} (\mathrm{mod} \: p) 
+		\]
+		ima netrivijalna rešenja. (Rešenje je trvijalno ako $x\cdot y \cdot z\equiv 0\: (\mathrm{mod} \: p)$)
+	\end{teorema}
+	
+	
 	\newpage
 	
 \begin{thebibliography}{99}
