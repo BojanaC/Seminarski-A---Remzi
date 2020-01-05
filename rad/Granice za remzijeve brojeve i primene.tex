@@ -14,6 +14,7 @@
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{posledica}{Posledica}[teorema]
 \newtheorem{lema}[teorema]{Lema}
+\newcommand{\dokaz}[1]{\begin{proof}[Dokaz]#1\end{proof}}
 \begin{document}
 	
 	\maketitle
@@ -34,13 +35,23 @@
 	
 	\section{Primene Remzijeve teoreme}
 	
-	\subsection{Šurova teorema}
-	\begin{teorema} \label{sur}
+	\begin{teorema}\label{sur}
 		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
 		\[
 		x + y = z \: \mathrm{i} \: \chi(x)= \chi(y)=\chi(z)
 		\]
 	\end{teorema}
+	\dokaz{
+		Neka je $n \in \mathbb{N},\: n+1 \geq R(3)_k=\underbrace{(3,3,\ldots,3)}_\text{k puta}$. Tada ono indukuje sledeće bojenje:
+		\[
+			\chi^*:[\underline{n+1}]^2\rightarrow \underline{k}:\{i,j\}\mapsto \chi(|i-j|)
+		\]
+		Zbog $n+1 \rightarrow \underbrace{(3,3,\ldots,3)}_\text{k puta}$, postoje $i_1, i_2$ i $i_3$ obojeni istom bojom, odnosno $\chi^*(\{i_1,i_2\})=\chi^*(\{i_1,i_3\})=\chi^*(\{i_2,i_3\})$. Neka je:
+		\[
+			x:=i_1-i_2,\:y:=i_2-i_3\:\mathrm{i}\:z:=i_1-i_3
+		\]
+		Imamo $x,y,z\in \{1,\ldots,n\}$ i $x-y=i_1-i_2+i_2-i_3=i_1-i_3=z$.
+	}
 	
 	\begin{teorema} \label{sur2}
 		 Za sve $m \in \mathbb{N} \textbackslash \{0\}$ postoji neko $n_{0} \in \mathbb{N}$, takvo da za sve proste brojeve $p>n_{0}$ jednačina
@@ -49,7 +60,13 @@
 		\]
 		ima netrivijalna rešenja. (Rešenje je trvijalno ako $x\cdot y \cdot z\equiv 0\: (\mathrm{mod} \: p)$)
 	\end{teorema}
-	
+	\dokaz{
+		Neka je $n_0=R(3)_m+1$. Neka je $g$ generator grupe $\mathbb{Z}_{p}^{*} $ ($g$ postoji zbog cikličnosti grupe $\mathbb{Z}_{p}^{*}$). Svaki elemenat $x\in\mathbb{Z}_{p}^{*}$ možemo zapisati $x$ kao $g^a$. Imamo $a=mj+i$, za $0\leq i < m$, tako da je $x=g^{mj+i}$. Posmatrajmo bojenje koje boji elemenat $x$ skupa $\mathbb{Z}_{p}^{*}$ u boju $i$ ako je $x=g^{mj+i}$. Na osnovu Šurove teoreme (\ref{sur}), postoje $a, b$ i $c$ obojeni istom bojom, takvi da važi $a+b=c$, odnoso eksponenti $a, b$ i $c$ su kongrueni po modulu $m$. Dakle,
+		\[
+			g^{mj_{a}+i}+g^{mj_{b}+i}=g^{mj_{c}+i}
+		\]
+		Neka su $x=g^{j_{a}}$, $y=g^{j_{b}}$ i $z=g^{j_{c}}$. Množenjem gornje jednačine sa $g^{-i}$ dobijamo $x^m+y^m=z^m$  
+	}
 	
 	\newpage
 	
