@@ -34,7 +34,7 @@
 	\newpage
 	
 	\section{Primene Remzijeve teoreme}
-	
+	%sur i primena sura(citirati Sura)
 	\begin{teorema}\label{sur}
 		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
 		\[
@@ -67,7 +67,16 @@
 		\]
 		Neka su $x=g^{j_{a}}$, $y=g^{j_{b}}$ i $z=g^{j_{c}}$. Množenjem gornje jednačine sa $g^{-i}$ dobijamo $x^m+y^m=z^m$  
 	}
-	
+	%happy ending T.(citirati happyEndingProof rad)
+	\begin{teorema}
+		Za svaki prirodan broj $n\geq 3$ postoji broj $N(n)$ takav da bilo koji skup od bar $N$ tačaka u ravni u opštem položaju sadrži konveksan $n$-tougao
+	\end{teorema}
+	\dokaz{
+		Za $n=4$ dokazaćemo da $N=5$ zadovoljava uslove. Posmatrajmo 5 tačaka $A,B,C,D \mathrm{i} E$. Ako je najmanji konveksni mnogougao petougao ili četvorougao, dokaz je trivijalan. U suprotnom, neka je najmanji takav mnogougao trougao $ABC$. $D$ i $E$ se onda nalaze unutar $ABC$. 2 tačke od $A$,$B$ i $C$ se moraju nalaziti sa jedne strane prave $DE$. Neka su to $A$ i $C$. Tada je $ACDE$ traženi četvorougao.
+		
+		Neka je $X$ skup od bar $R_4(n,5)$ tačaka u opštem položaju. Na osnovu Remzijeve teoreme za hipergrafove (\ref{RemziHiper}) znamo da je ovaj broj konačan. Obojimo sve četvoročlane podskupove tačaka u plavo ako je četvorougao koje obrazuju konveksan ili u crveno ako je konkavan. Pošto ima ukupno $R_{4}(n,5)$ tačaka, mora postojati ili $n$-točlani skup tačaka čiji su svi četvoročlani podskupovi plave boje (konveksni) ili petočlani skup tačaka čiji su svi četvoročlani podskupovi crvene boje. Dokazali smo da među 5 tačaka u opštem položaju mora postojati konveksan četvorougao, dakle mora postojati n-točlani skup tačaka tako da su svi četvorouglovi koje oni obrazuju knoveksni, odnosno konveksan n-toguao od n tačaka. Dakle traženi $N$ postoji i važi $N\leq R_{4}(n,5)$
+		  
+	}
 	\newpage
 	
 \begin{thebibliography}{99}
