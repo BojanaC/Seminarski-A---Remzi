@@ -32,6 +32,47 @@
 	\lipsum[1]
 
 	\newpage
+	%ako mislite da nešto nije dobro ili se treba prepraviti, označitee
+	\section{Gornje granice}
+	
+	\begin{teorema}
+\[R(l,k) \leq {l+k-2\choose l-1} 
+\]
+\end{teorema}
+\dokaz{
+Kod ovog dokaza koristićemo indukciju. Naša baza biće da dokažemo da nejednakost važi za $l=k=2$, odnosno
+\[ R(2,2) \leq {2+2-2 \choose 2-1}
+\]
+\[
+2 \leq 2 \choose 1
+\]
+\[
+2 \leq 2
+\]
+Pretpostavimo sada da važi $\forall(l,k)$  pri čemu je $l+k \geq 4$.
+
+\[l,k \geq 2
+\]
+\[
+l+k=n+1
+\]
+\[
+R(l,k) \leq R(l-1, k) + R(l, k+1)
+\]
+\[
+R(l,k) \leq {{l-1+k-2 \choose l-1-1} + {l+k-1-2 \choose l-1}}
+\]
+\[
+R(l,k) \leq {{l+k-3 \choose l-2} + {l+k-3 \choose l-1}}
+\]
+\[
+R(l,k) \leq {l+k-2 \choose l-1}
+\]
+}
+Prvu nejednakost dokazali smo %dodaću na kraju
+, a samu jednakost upotreom Paskalovog identiteta ${n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}$.
+	
+	\newpage
 	
 	\section{Primene Remzijeve teoreme}
 	%sur i primena sura(citirati Sura)
