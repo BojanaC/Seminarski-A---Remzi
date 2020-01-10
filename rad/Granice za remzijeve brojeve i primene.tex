@@ -72,7 +72,23 @@ R(l,k) \leq {l+k-2 \choose l-1}
 Prvu nejednakost dokazali smo %dodaću na kraju
 , a samu jednakost upotreom Paskalovog identiteta ${n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}$.
 	
-	\newpage
+\section{Donja ograničenja za Remzijeve brojeve}
+\begin{teorema}\label{dot1}
+Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k,k) > n$.
+\dokaz{
+	Posmatrajmo proizvoljno bojenje grana grafa $K_n$ u dve boje - crvenu i plavu. Prvo ćemo odrediti verovatnoću da je neki k-podskup $K_k$ početnog grafa monohromatski. 
+	\newline
+	Verovatnoća da je grana $uv$ u grafu obojena crvenom bojom jednaka je verovatnoći da je obojena i plavom bojom i iznosi 
+	$$P(uv \text{ je crvena}) = P(uv \text{ je plava}) = \frac{1}{2}$$
+	Sa $M_s$ označimo događaj da je $K_k$ monohromatski. Kako nam od svih mogućih bojenja ovog k-podskupa odgovaraju samo dva gde su sve grane isključivo crvene ili plave dobijamo
+	da je
+	$$P(M_s) = 2\left(\frac{1}{2}\right)^{\binom{k}{2}} = 2 ^ {1 - \binom{k}{2}}.$$
+	Odredimo sada verovatnoću da se u celom $K_n$ grafu nalazi monohromatski $K_k$ podskup i označimo taj događaj sa $A$. U celom grafu ima $\binom{n}{k}$ ovakvih podskupova koje 			ćemo označiti sa $S$. Ipak pošto događaj da je neki $K_k$ monohromatski nije nezavisan u odnosu na to da su ostali podskupovi $S$ monhromatski dobijamo 
+	$$P(A) = P(\bigcup_{|S|=k}M_s) \leq{\sum_{|S|=k}P(M_s)} = \binom{n}{k} 2 ^ {1 - \binom{k}{2}}.$$
+	Iz ovoga sledi da ako je $\binom{n}{k} 2 ^ {1 - \binom{k}{2}} < 1$ onda važi i $P(A) < 1$, što nam govori da u slučaju proizvoljnog bojenja grafa $K_n$ postojanje monohromatskog 
+	$K_k$ nije garantovano, tj. postoji bojenje koje ga ne sadrži i odatle da je $R(k,k) > n$.
+}
+\end{teorema}
 	
 	\section{Primene Remzijeve teoreme}
 	%sur i primena sura(citirati Sura)
@@ -118,6 +134,8 @@ Prvu nejednakost dokazali smo %dodaću na kraju
 		Neka je $X$ skup od bar $R_4(n,5)$ tačaka u opštem položaju. Na osnovu Remzijeve teoreme za hipergrafove (\ref{RemziHiper}) znamo da je ovaj broj konačan. Obojimo sve četvoročlane podskupove tačaka u plavo ako je četvorougao koje obrazuju konveksan ili u crveno ako je konkavan. Pošto ima ukupno $R_{4}(n,5)$ tačaka, mora postojati ili $n$-točlani skup tačaka čiji su svi četvoročlani podskupovi plave boje (konveksni) ili petočlani skup tačaka čiji su svi četvoročlani podskupovi crvene boje. Dokazali smo da među 5 tačaka u opštem položaju mora postojati konveksan četvorougao, dakle mora postojati n-točlani skup tačaka tako da su svi četvorouglovi koje oni obrazuju knoveksni, odnosno konveksan n-toguao od n tačaka. Dakle traženi $N$ postoji i važi $N\leq R_{4}(n,5)$
 		  
 	}
+
+
 	\newpage
 	
 \begin{thebibliography}{99}
