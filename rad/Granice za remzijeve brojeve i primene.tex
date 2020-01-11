@@ -76,17 +76,28 @@ Prvu nejednakost dokazali smo %dodaću na kraju
 \begin{teorema}\label{dot1}
 Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k,k) > n$.
 \dokaz{
-	Posmatrajmo proizvoljno bojenje grana grafa $K_n$ u dve boje - crvenu i plavu. Prvo ćemo odrediti verovatnoću da je neki k-podskup $K_k$ početnog grafa monohromatski. 
+	Posmatrajmo proizvoljno bojenje grana grafa $K_n$ u dve boje - crvenu i plavu takvo da je verovatnoća da je grana $uv$ u grafu obojena crvenom bojom jednaka verovatnoći da je 		           obojena plavom bojom i iznosi 
+	$$P(uv \text{ je crvena}) = P(uv \text{ je plava}) = \frac{1}{2}.$$
 	\newline
-	Verovatnoća da je grana $uv$ u grafu obojena crvenom bojom jednaka je verovatnoći da je obojena i plavom bojom i iznosi 
-	$$P(uv \text{ je crvena}) = P(uv \text{ je plava}) = \frac{1}{2}$$
+           Prvo ćemo odrediti verovatnoću da je neki k-podskup $K_k$ početnog grafa monohromatski. 
 	Sa $M_s$ označimo događaj da je $K_k$ monohromatski. Kako nam od svih mogućih bojenja ovog k-podskupa odgovaraju samo dva gde su sve grane isključivo crvene ili plave dobijamo
 	da je
 	$$P(M_s) = 2\left(\frac{1}{2}\right)^{\binom{k}{2}} = 2 ^ {1 - \binom{k}{2}}.$$
 	Odredimo sada verovatnoću da se u celom $K_n$ grafu nalazi monohromatski $K_k$ podskup i označimo taj događaj sa $A$. U celom grafu ima $\binom{n}{k}$ ovakvih podskupova koje 			ćemo označiti sa $S$. Ipak pošto događaj da je neki $K_k$ monohromatski nije nezavisan u odnosu na to da su ostali podskupovi $S$ monhromatski dobijamo 
-	$$P(A) = P(\bigcup_{|S|=k}M_s) \leq{\sum_{|S|=k}P(M_s)} = \binom{n}{k} 2 ^ {1 - \binom{k}{2}}.$$
-	Iz ovoga sledi da ako je $\binom{n}{k} 2 ^ {1 - \binom{k}{2}} < 1$ onda važi i $P(A) < 1$, što nam govori da u slučaju proizvoljnog bojenja grafa $K_n$ postojanje monohromatskog 
+	$$P(A) = P(\bigcup_{|S|=k}M_S) \leq{\sum_{|S|=k}P(M_S)} = \binom{n}{k} 2 ^ {1 - \binom{k}{2}}.$$
+	Iz ovoga sledi da ako je $\binom{n}{k} 2 ^ {1 - \binom{k}{2}} < 1$ onda važi i $P(A) < 1$, čime dobijamo da pri ovakvim bojenjima grafa $K_n$ postojanje monohromatskog 
 	$K_k$ nije garantovano, tj. postoji bojenje koje ga ne sadrži i odatle da je $R(k,k) > n$.
+}
+\end{teorema}
+\begin{teorema}\label{dot2}
+Neka su dati prirodni brojevi $n$, $k$ i $l$, takvi da $n \geq{k} > 0$ i $n \geq{l} > 0$. Ako za neki broj $p$, $0 \leq{p} \leq 1$ važi
+$$\binom{n}{k}p^{\binom{k}{2}} + \binom{n}{l}(1 - p)^{\binom{l}{2}} < 1$$ onda je $R(k,l) > n$
+\dokaz{
+	Dokaz ove teoreme je sličan dokazu prethodne Teoreme 3.1. Neka je verovatnoća da je proizvoljna grana $uv$ u grafu $K_n$ crvena jednaka $p$. Tada je verovatnoća da je ona               	plava jednaka $1 - p$, pa možemo pisati 
+	$$P(uv \text{ je crvena}) = p,\; P(uv \text{ je plava}) = 1 - p, \; \forall uv \in E(K_n)$$
+	Neka je $S$ potpun $k$-elementan poskup, a $T$ potpun $l$-elementan poskup grafa $K_n$. Označimo sa $A_S$ događaj da je neki podskup $S$ monohromatski crven, a $B_T$ događaj  	da je poskup $T$ monohromatski plav. Onda je ukupna verovatnoća da u grafu $K_n$ postoji monohromatski obojen $K_k$ u crveno ili $K_l$ u plavo jednaka
+	$$P\left(\bigcup_{|S|=k}A_S \cup \bigcup_{|T|=l}B_T \right) \leq \sum_{|S|=k}P(A_S) + \sum_{|T|=l}P(B_T) \leq \binom{n}{k}p^{\binom{k}{2}} + \binom{n}{l}(1 - p)^{\binom{l}{2}}$$
+	Ako postoji $p$ za koji je krajnji izraz manji od 1, onda zaključujemo da postoji $K_n$  koji sadrži potpuno crveni $K_k$ ili potpuno plavi $K_l$, pa mora biti $R(k,l)>n$.
 }
 \end{teorema}
 	
