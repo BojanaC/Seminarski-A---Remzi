@@ -1,166 +1,233 @@
-\documentclass{article}
-\usepackage{lipsum}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{hyperref}
-\title{Granice za Remzijeve brojeve i primene}
-\date{15.1.2020}
-\author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
+	\documentclass{article}
+	\usepackage{lipsum}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{amsfonts}
+	\usepackage{amsmath}
+	\usepackage{amsthm}
+	\usepackage{hyperref}
+	\title{Granice za Remzijeve brojeve i primene}
+	\date{15.1.2020}
+	\author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
 
-\theoremstyle{definition}
-\newtheorem{teorema}{Teorema}[section]
-\newtheorem{posledica}{Posledica}[teorema]
-\newtheorem{lema}[teorema]{Lema}
-\newcommand{\dokaz}[1]{\begin{proof}[Dokaz]#1\end{proof}}
-\begin{document}
-	
-	\maketitle
-	
-	\newpage
-	
-	\tableofcontents
-	
-	\newpage
-	
-	\section{Uvod}
-	
-	$ 2^{\frac{k}{2}} \leq R(k,k)$ na osnovu Erdosevog dokaza \cite{theBook}
-	
-	\lipsum[1]
+	\theoremstyle{definition}
+	\newtheorem{teorema}{Teorema}[section]
+	\newtheorem{posledica}{Posledica}[teorema]
+	\newtheorem{lema}[teorema]{Lema}
+	\newcommand{\dokaz}[1]{\begin{proof}[Dokaz]#1\end{proof}}
+	\begin{document}
 
-	\newpage
-	%ako mislite da nešto nije dobro ili se treba prepraviti, označitee
-	\section{Gornje granice}
-	
-	\begin{teorema}
-\[R(l,k) \leq {l+k-2\choose l-1} 
-\]
-\end{teorema}
-\dokaz{
-Kod ovog dokaza koristićemo indukciju. Naša baza biće da dokažemo da nejednakost važi za $l=k=2$, odnosno
-\[ R(2,2) \leq {2+2-2 \choose 2-1}
-\]
-\[
-2 \leq 2 \choose 1
-\]
-\[
-2 \leq 2
-\]
-Pretpostavimo sada da važi $\forall(l,k)$  pri čemu je $l+k \geq 4$.
+		\maketitle
 
-\[l,k \geq 2
-\]
-\[
-l+k=n+1
-\]
-\[
-R(l,k) \leq R(l-1, k) + R(l, k+1)
-\]
-\[
-R(l,k) \leq {{l-1+k-2 \choose l-1-1} + {l+k-1-2 \choose l-1}}
-\]
-\[
-R(l,k) \leq {{l+k-3 \choose l-2} + {l+k-3 \choose l-1}}
-\]
-\[
-R(l,k) \leq {l+k-2 \choose l-1}
-\]
-}
-Prvu nejednakost dokazali smo %dodaću na kraju
-, a samu jednakost upotreom Paskalovog identiteta ${n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}$.
-	
-\section{Donja ograničenja za Remzijeve brojeve}
-\begin{teorema}\label{dot1}
-Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k,k) > n$.
-\dokaz{
-	Posmatrajmo proizvoljno bojenje grana grafa $K_n$ u dve boje - crvenu i plavu takvo da je verovatnoća da je grana $uv$ u grafu obojena crvenom bojom jednaka verovatnoći da je 		           obojena plavom bojom i iznosi 
-	$$P(uv \text{ je crvena}) = P(uv \text{ je plava}) = \frac{1}{2}.$$
-	\newline
-           Prvo ćemo odrediti verovatnoću da je neki k-podskup $K_k$ početnog grafa monohromatski. 
-	Sa $M_s$ označimo događaj da je $K_k$ monohromatski. Kako nam od svih mogućih bojenja ovog k-podskupa odgovaraju samo dva gde su sve grane isključivo crvene ili plave dobijamo
-	da je
-	$$P(M_s) = 2\left(\frac{1}{2}\right)^{\binom{k}{2}} = 2 ^ {1 - \binom{k}{2}}.$$
-	Odredimo sada verovatnoću da se u celom $K_n$ grafu nalazi monohromatski $K_k$ podskup i označimo taj događaj sa $A$. U celom grafu ima $\binom{n}{k}$ ovakvih podskupova koje 			ćemo označiti sa $S$. Ipak pošto događaj da je neki $K_k$ monohromatski nije nezavisan u odnosu na to da su ostali podskupovi $S$ monhromatski dobijamo 
-	$$P(A) = P(\bigcup_{|S|=k}M_S) \leq{\sum_{|S|=k}P(M_S)} = \binom{n}{k} 2 ^ {1 - \binom{k}{2}}.$$
-	Iz ovoga sledi da ako je $\binom{n}{k} 2 ^ {1 - \binom{k}{2}} < 1$ onda važi i $P(A) < 1$, čime dobijamo da pri ovakvim bojenjima grafa $K_n$ postojanje monohromatskog 
-	$K_k$ nije garantovano, tj. postoji bojenje koje ga ne sadrži i odatle da je $R(k,k) > n$.
-}
-\end{teorema}
-\begin{teorema}\label{dot2}
-Neka su dati prirodni brojevi $n$, $k$ i $l$, takvi da $n \geq{k} > 0$ i $n \geq{l} > 0$. Ako za neki broj $p$, $0 \leq{p} \leq 1$ važi
-$$\binom{n}{k}p^{\binom{k}{2}} + \binom{n}{l}(1 - p)^{\binom{l}{2}} < 1$$ onda je $R(k,l) > n$
-\dokaz{
-	Dokaz ove teoreme je sličan dokazu prethodne Teoreme 3.1. Neka je verovatnoća da je proizvoljna grana $uv$ u grafu $K_n$ crvena jednaka $p$. Tada je verovatnoća da je ona               	plava jednaka $1 - p$, pa možemo pisati 
-	$$P(uv \text{ je crvena}) = p,\; P(uv \text{ je plava}) = 1 - p, \; \forall uv \in E(K_n)$$
-	Neka je $S$ potpun $k$-elementan poskup, a $T$ potpun $l$-elementan poskup grafa $K_n$. Označimo sa $A_S$ događaj da je neki podskup $S$ monohromatski crven, a $B_T$ događaj  	da je poskup $T$ monohromatski plav. Onda je ukupna verovatnoća da u grafu $K_n$ postoji monohromatski obojen $K_k$ u crveno ili $K_l$ u plavo jednaka
-	$$P\left(\bigcup_{|S|=k}A_S \cup \bigcup_{|T|=l}B_T \right) \leq \sum_{|S|=k}P(A_S) + \sum_{|T|=l}P(B_T) \leq \binom{n}{k}p^{\binom{k}{2}} + \binom{n}{l}(1 - p)^{\binom{l}{2}}$$
-	Ako postoji $p$ za koji je krajnji izraz manji od 1, onda zaključujemo da postoji $K_n$  koji sadrži potpuno crveni $K_k$ ili potpuno plavi $K_l$, pa mora biti $R(k,l)>n$.
-}
-\end{teorema}
-	
-	\section{Primene Remzijeve teoreme}
-	%sur i primena sura(citirati Sura)
-	\begin{teorema}\label{sur}
-		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
-		\[
-		x + y = z \: \mathrm{i} \: \chi(x)= \chi(y)=\chi(z)
-		\]
-	\end{teorema}
-	\dokaz{
-		Neka je $n \in \mathbb{N},\: n+1 \geq R(3)_k=\underbrace{(3,3,\ldots,3)}_\text{k puta}$. Tada ono indukuje sledeće bojenje:
-		\[
-			\chi^*:[\underline{n+1}]^2\rightarrow \underline{k}:\{i,j\}\mapsto \chi(|i-j|)
-		\]
-		Zbog $n+1 \rightarrow \underbrace{(3,3,\ldots,3)}_\text{k puta}$, postoje $i_1, i_2$ i $i_3$ obojeni istom bojom, odnosno $\chi^*(\{i_1,i_2\})=\chi^*(\{i_1,i_3\})=\chi^*(\{i_2,i_3\})$. Neka je:
-		\[
-			x:=i_1-i_2,\:y:=i_2-i_3\:\mathrm{i}\:z:=i_1-i_3
-		\]
-		Imamo $x,y,z\in \{1,\ldots,n\}$ i $x-y=i_1-i_2+i_2-i_3=i_1-i_3=z$.
-	}
-	
-	\begin{teorema} \label{sur2}
-		 Za sve $m \in \mathbb{N} \textbackslash \{0\}$ postoji neko $n_{0} \in \mathbb{N}$, takvo da za sve proste brojeve $p>n_{0}$ jednačina
-		\[
-		x^{m}+y^{m}\equiv z^{m} (\mathrm{mod} \: p) 
-		\]
-		ima netrivijalna rešenja. (Rešenje je trvijalno ako $x\cdot y \cdot z\equiv 0\: (\mathrm{mod} \: p)$)
-	\end{teorema}
-	\dokaz{
-		Neka je $n_0=R(3)_m+1$. Neka je $g$ generator grupe $\mathbb{Z}_{p}^{*} $ ($g$ postoji zbog cikličnosti grupe $\mathbb{Z}_{p}^{*}$). Svaki elemenat $x\in\mathbb{Z}_{p}^{*}$ možemo zapisati $x$ kao $g^a$. Imamo $a=mj+i$, za $0\leq i < m$, tako da je $x=g^{mj+i}$. Posmatrajmo bojenje koje boji elemenat $x$ skupa $\mathbb{Z}_{p}^{*}$ u boju $i$ ako je $x=g^{mj+i}$. Na osnovu Šurove teoreme (\ref{sur}), postoje $a, b$ i $c$ obojeni istom bojom, takvi da važi $a+b=c$, odnoso eksponenti $a, b$ i $c$ su kongrueni po modulu $m$. Dakle,
-		\[
-			g^{mj_{a}+i}+g^{mj_{b}+i}=g^{mj_{c}+i}
-		\]
-		Neka su $x=g^{j_{a}}$, $y=g^{j_{b}}$ i $z=g^{j_{c}}$. Množenjem gornje jednačine sa $g^{-i}$ dobijamo $x^m+y^m=z^m$  
-	}
-	%happy ending T.(citirati happyEndingProof rad)
-	\begin{teorema}
-		Za svaki prirodan broj $n\geq 3$ postoji broj $N(n)$ takav da bilo koji skup od bar $N$ tačaka u ravni u opštem položaju sadrži konveksan $n$-tougao
-	\end{teorema}
-	\dokaz{
-		Za $n=4$ dokazaćemo da $N=5$ zadovoljava uslove. Posmatrajmo 5 tačaka $A,B,C,D \mathrm{i} E$. Ako je najmanji konveksni mnogougao petougao ili četvorougao, dokaz je trivijalan. U suprotnom, neka je najmanji takav mnogougao trougao $ABC$. $D$ i $E$ se onda nalaze unutar $ABC$. 2 tačke od $A$,$B$ i $C$ se moraju nalaziti sa jedne strane prave $DE$. Neka su to $A$ i $C$. Tada je $ACDE$ traženi četvorougao.
+		\newpage
+
+		\tableofcontents
+
+		\newpage
+
+		\section{Uvod}
+
+		$ 2^{\frac{k}{2}} \leq R(k,k)$ na osnovu Erdosevog dokaza \cite{theBook}
+
+		\lipsum[1]
 		
-		Neka je $X$ skup od bar $R_4(n,5)$ tačaka u opštem položaju. Na osnovu Remzijeve teoreme za hipergrafove (\ref{RemziHiper}) znamo da je ovaj broj konačan. Obojimo sve četvoročlane podskupove tačaka u plavo ako je četvorougao koje obrazuju konveksan ili u crveno ako je konkavan. Pošto ima ukupno $R_{4}(n,5)$ tačaka, mora postojati ili $n$-točlani skup tačaka čiji su svi četvoročlani podskupovi plave boje (konveksni) ili petočlani skup tačaka čiji su svi četvoročlani podskupovi crvene boje. Dokazali smo da među 5 tačaka u opštem položaju mora postojati konveksan četvorougao, dakle mora postojati n-točlani skup tačaka tako da su svi četvorouglovi koje oni obrazuju knoveksni, odnosno konveksan n-toguao od n tačaka. Dakle traženi $N$ postoji i važi $N\leq R_{4}(n,5)$
-		  
+		\newpage 
+		%Uredicu
+		Za svaka dva broja $l$ i $k$ možemo pronaći prirodan broj $n$, takav da svai graf sa $n$ brojem čvorova u sebi sadrži potpun podgraf sa $l$ čvorova ili njegov komplement sadrži podgraf sa $k$ nezavisnih čvorova.
+	\newline
+	Najmanji broj za koji ovo važi naziva se \textbf{Remzijev broj} i on se zapisuje kao $R(l,k)$ 
+	\newline
+	Tačne vrednosti Remzijevih brojeva se teško računaju i uglavnom su samo ograničeni intervalima. Trenutno je poznato 9 Remzijevih brojeva za $k,l>2$.
+	\newline
+	\begin{table}[h]
+	    \centering
+	    \begin{tabular}{|c|c|c|c|c|c|}
+	    \hline
+	    R(k,l)     &  1 & 2 & 3 & .... \\
+	    \hline
+	       1  & 1 & 1 & 1 &  1 \\
+	       \hline
+	       2 & 1 & 2 & 3 & ....\\
+	       \hline
+	       3 & 1 & 3 & ... & ... \\
+	       \hline
+	       ... & 1 & ... & ... & ... \\
+	       \hline
+	    \end{tabular}
+	    \caption{R(k,l)≤2}
+
+	\end{table}
+
+	\begin{Teorema}
+	\[
+	R(l,1)= (1,k) = 1
+	\]
+	\end{Teorema}
+	\begin{Teorema}
+	\[
+	R(l,2)=R(2,l)=l
+	\]
+	\end{Teorema}
+	% Treba li dokazivati ovo?
+
+		\newpage
+		%ako mislite da nešto nije dobro ili se treba prepraviti, označite
+
+		\section{Gornje granice}
+
+	\begin{Teorema}
+	\[
+	R(l,k) \leq R(k-1, l) + R(k, l-1)
+	\]
+	\end{Teorema}
+	\dokaz{
+	Iz prethodne teoreme znamo da $R(2,l)=l$ i $R(2,k)=k$. Koristeći induciju potvrđujemo da ovo važi i za svako $t$ i $s$ takvo da $t\leq k$ i $s<l$ ili $s\leq l$ i $t<k$.
+
+	Pretpostavimo sada suprotno, tj. da važi tvrđenje $R(l,k) \geq R(k-1, l) + R(k, l-1)$, odnosno da postoji graf sa $R(l,k)$ čvorova koji ne sadrži podgraf sa $l-1$ čvorova niti njegov komplement sadrži podgraf sa $k-1$ čvorova.
+
+	Neka je $u$ proizvoljan broj čvorova grafa $G$, broj njemu susednih čvorova označićemo sa $N$, a broj nesusednih čvorova biće $M$.
+	To se drugačije može zapisati kao $M=V(G)-N_G(u)-{u}$.
+	Kako ne bi važilo da graf $G$ sadrži podgraf sa $k-1$ čvorova mora da važi $N\leq R(k-1, l)-1 $, a samim tim i $M \leq R(k, l-1)-1 $. 
+	Ukupan broj čvorova $n$ jednak je zbiru navedenog (čvora $u$, kao i njegovih susednih i nesusednih čvorova).
+	\[
+	n= N+M+1
+	\]
+	\[
+	n= R(k-1, l)-1 + R(k, l-1)-1+1
+	\]
+	\[
+	n= R(k-1, l)+ R(k, l-1)-1
+	\]
+	Dobijeni izraz je kontradikcija, te sledi tačno tvrđenje ove teoreme.
 	}
 
 
-	\newpage
-	
-\begin{thebibliography}{99}
-	%ovde dodati bilo kakve resurse koji se citiraju
-	\bibitem{theBook}
-	Martin Aigner, Günter M. Ziegler.
-	\newblock {Proofs from The BOOK}.
-	\newblock Springer, 1998.
-	
-	\bibitem{mathPaulErdos}
-	Ronald L. Graham, Jaroslav Nešetřil, Steve Butler.
-	\newblock {The Mathematics of Paul Erdős II}.
-	\newblock Springer, 1990.
-	
-\end{thebibliography}	
-	
-\end{document}
+		\begin{teorema}
+	\[R(l,k) \leq {l+k-2\choose l-1} 
+	\]
+	\end{teorema}
+	\dokaz{
+	Kod ovog dokaza koristićemo indukciju. Naša baza biće da dokažemo da nejednakost važi za $l=k=2$, odnosno
+	\[ R(2,2) \leq {2+2-2 \choose 2-1}
+	\]
+	\[
+	2 \leq 2 \choose 1
+	\]
+	\[
+	2 \leq 2
+	\]
+	Pretpostavimo sada da važi $\forall(l,k)$  pri čemu je $l+k \geq 4$.
+
+	\[l,k \geq 2
+	\]
+	\[
+	l+k=n+1
+	\]
+	\[
+	R(l,k) \leq R(l-1, k) + R(l, k-1)
+	\]
+	\[
+	R(l,k) \leq {{l-1+k-2 \choose l-1-1} + {l+k-1-2 \choose l-1}}
+	\]
+	\[
+	R(l,k) \leq {{l+k-3 \choose l-2} + {l+k-3 \choose l-1}}
+	\]
+	\[
+	R(l,k) \leq {l+k-2 \choose l-1}
+	\]
+	}
+	Prvu nejednakost dokazali smo %dodaću na kraju
+	, a samu jednakost upotreom Paskalovog identiteta ${n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}$.
+
+	\section{Donja ograničenja za Remzijeve brojeve}
+	\begin{teorema}\label{dot1}
+	Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k,k) > n$.
+	\dokaz{
+		Posmatrajmo proizvoljno bojenje grana grafa $K_n$ u dve boje - crvenu i plavu takvo da je verovatnoća da je grana $uv$ u grafu obojena crvenom bojom jednaka verovatnoći da je 		           obojena plavom bojom i iznosi 
+		$$P(uv \text{ je crvena}) = P(uv \text{ je plava}) = \frac{1}{2}.$$
+		\newline
+		   Prvo ćemo odrediti verovatnoću da je neki k-podskup $K_k$ početnog grafa monohromatski. 
+		Sa $M_s$ označimo događaj da je $K_k$ monohromatski. Kako nam od svih mogućih bojenja ovog k-podskupa odgovaraju samo dva gde su sve grane isključivo crvene ili plave dobijamo
+		da je
+		$$P(M_s) = 2\left(\frac{1}{2}\right)^{\binom{k}{2}} = 2 ^ {1 - \binom{k}{2}}.$$
+		Odredimo sada verovatnoću da se u celom $K_n$ grafu nalazi monohromatski $K_k$ podskup i označimo taj događaj sa $A$. U celom grafu ima $\binom{n}{k}$ ovakvih podskupova koje 			ćemo označiti sa $S$. Ipak pošto događaj da je neki $K_k$ monohromatski nije nezavisan u odnosu na to da su ostali podskupovi $S$ monhromatski dobijamo 
+		$$P(A) = P(\bigcup_{|S|=k}M_S) \leq{\sum_{|S|=k}P(M_S)} = \binom{n}{k} 2 ^ {1 - \binom{k}{2}}.$$
+		Iz ovoga sledi da ako je $\binom{n}{k} 2 ^ {1 - \binom{k}{2}} < 1$ onda važi i $P(A) < 1$, čime dobijamo da pri ovakvim bojenjima grafa $K_n$ postojanje monohromatskog 
+		$K_k$ nije garantovano, tj. postoji bojenje koje ga ne sadrži i odatle da je $R(k,k) > n$.
+	}
+	\end{teorema}
+	\begin{teorema}\label{dot2}
+	Neka su dati prirodni brojevi $n$, $k$ i $l$, takvi da $n \geq{k} > 0$ i $n \geq{l} > 0$. Ako za neki broj $p$, $0 \leq{p} \leq 1$ važi
+	$$\binom{n}{k}p^{\binom{k}{2}} + \binom{n}{l}(1 - p)^{\binom{l}{2}} < 1$$ onda je $R(k,l) > n$
+	\dokaz{
+		Dokaz ove teoreme je sličan dokazu prethodne Teoreme 3.1. Neka je verovatnoća da je proizvoljna grana $uv$ u grafu $K_n$ crvena jednaka $p$. Tada je verovatnoća da je ona               	plava jednaka $1 - p$, pa možemo pisati 
+		$$P(uv \text{ je crvena}) = p,\; P(uv \text{ je plava}) = 1 - p, \; \forall uv \in E(K_n)$$
+		Neka je $S$ potpun $k$-elementan poskup, a $T$ potpun $l$-elementan poskup grafa $K_n$. Označimo sa $A_S$ događaj da je neki podskup $S$ monohromatski crven, a $B_T$ događaj  	da je poskup $T$ monohromatski plav. Onda je ukupna verovatnoća da u grafu $K_n$ postoji monohromatski obojen $K_k$ u crveno ili $K_l$ u plavo jednaka
+		$$P\left(\bigcup_{|S|=k}A_S \cup \bigcup_{|T|=l}B_T \right) \leq \sum_{|S|=k}P(A_S) + \sum_{|T|=l}P(B_T) \leq \binom{n}{k}p^{\binom{k}{2}} + \binom{n}{l}(1 - p)^{\binom{l}{2}}$$
+		Ako postoji $p$ za koji je krajnji izraz manji od 1, onda zaključujemo da postoji $K_n$  koji sadrži potpuno crveni $K_k$ ili potpuno plavi $K_l$, pa mora biti $R(k,l)>n$.
+	}
+	\end{teorema}
+
+		\section{Primene Remzijeve teoreme}
+		%sur i primena sura(citirati Sura)
+		\begin{teorema}\label{sur}
+			Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
+			\[
+			x + y = z \: \mathrm{i} \: \chi(x)= \chi(y)=\chi(z)
+			\]
+		\end{teorema}
+		\dokaz{
+			Neka je $n \in \mathbb{N},\: n+1 \geq R(3)_k=\underbrace{(3,3,\ldots,3)}_\text{k puta}$. Tada ono indukuje sledeće bojenje:
+			\[
+				\chi^*:[\underline{n+1}]^2\rightarrow \underline{k}:\{i,j\}\mapsto \chi(|i-j|)
+			\]
+			Zbog $n+1 \rightarrow \underbrace{(3,3,\ldots,3)}_\text{k puta}$, postoje $i_1, i_2$ i $i_3$ obojeni istom bojom, odnosno $\chi^*(\{i_1,i_2\})=\chi^*(\{i_1,i_3\})=\chi^*(\{i_2,i_3\})$. Neka je:
+			\[
+				x:=i_1-i_2,\:y:=i_2-i_3\:\mathrm{i}\:z:=i_1-i_3
+			\]
+			Imamo $x,y,z\in \{1,\ldots,n\}$ i $x-y=i_1-i_2+i_2-i_3=i_1-i_3=z$.
+		}
+
+		\begin{teorema} \label{sur2}
+			 Za sve $m \in \mathbb{N} \textbackslash \{0\}$ postoji neko $n_{0} \in \mathbb{N}$, takvo da za sve proste brojeve $p>n_{0}$ jednačina
+			\[
+			x^{m}+y^{m}\equiv z^{m} (\mathrm{mod} \: p) 
+			\]
+			ima netrivijalna rešenja. (Rešenje je trvijalno ako $x\cdot y \cdot z\equiv 0\: (\mathrm{mod} \: p)$)
+		\end{teorema}
+		\dokaz{
+			Neka je $n_0=R(3)_m+1$. Neka je $g$ generator grupe $\mathbb{Z}_{p}^{*} $ ($g$ postoji zbog cikličnosti grupe $\mathbb{Z}_{p}^{*}$). Svaki elemenat $x\in\mathbb{Z}_{p}^{*}$ možemo zapisati $x$ kao $g^a$. Imamo $a=mj+i$, za $0\leq i < m$, tako da je $x=g^{mj+i}$. Posmatrajmo bojenje koje boji elemenat $x$ skupa $\mathbb{Z}_{p}^{*}$ u boju $i$ ako je $x=g^{mj+i}$. Na osnovu Šurove teoreme (\ref{sur}), postoje $a, b$ i $c$ obojeni istom bojom, takvi da važi $a+b=c$, odnoso eksponenti $a, b$ i $c$ su kongrueni po modulu $m$. Dakle,
+			\[
+				g^{mj_{a}+i}+g^{mj_{b}+i}=g^{mj_{c}+i}
+			\]
+			Neka su $x=g^{j_{a}}$, $y=g^{j_{b}}$ i $z=g^{j_{c}}$. Množenjem gornje jednačine sa $g^{-i}$ dobijamo $x^m+y^m=z^m$  
+		}
+		%happy ending T.(citirati happyEndingProof rad)
+		\begin{teorema}
+			Za svaki prirodan broj $n\geq 3$ postoji broj $N(n)$ takav da bilo koji skup od bar $N$ tačaka u ravni u opštem položaju sadrži konveksan $n$-tougao
+		\end{teorema}
+		\dokaz{
+			Za $n=4$ dokazaćemo da $N=5$ zadovoljava uslove. Posmatrajmo 5 tačaka $A,B,C,D \mathrm{i} E$. Ako je najmanji konveksni mnogougao petougao ili četvorougao, dokaz je trivijalan. U suprotnom, neka je najmanji takav mnogougao trougao $ABC$. $D$ i $E$ se onda nalaze unutar $ABC$. 2 tačke od $A$,$B$ i $C$ se moraju nalaziti sa jedne strane prave $DE$. Neka su to $A$ i $C$. Tada je $ACDE$ traženi četvorougao.
+
+			Neka je $X$ skup od bar $R_4(n,5)$ tačaka u opštem položaju. Na osnovu Remzijeve teoreme za hipergrafove (\ref{RemziHiper}) znamo da je ovaj broj konačan. Obojimo sve četvoročlane podskupove tačaka u plavo ako je četvorougao koje obrazuju konveksan ili u crveno ako je konkavan. Pošto ima ukupno $R_{4}(n,5)$ tačaka, mora postojati ili $n$-točlani skup tačaka čiji su svi četvoročlani podskupovi plave boje (konveksni) ili petočlani skup tačaka čiji su svi četvoročlani podskupovi crvene boje. Dokazali smo da među 5 tačaka u opštem položaju mora postojati konveksan četvorougao, dakle mora postojati n-točlani skup tačaka tako da su svi četvorouglovi koje oni obrazuju knoveksni, odnosno konveksan n-toguao od n tačaka. Dakle traženi $N$ postoji i važi $N\leq R_{4}(n,5)$
+
+		}
+
+
+		\newpage
+
+	\begin{thebibliography}{99}
+		%ovde dodati bilo kakve resurse koji se citiraju
+		\bibitem{theBook}
+		Martin Aigner, Günter M. Ziegler.
+		\newblock {Proofs from The BOOK}.
+		\newblock Springer, 1998.
+
+		\bibitem{mathPaulErdos}
+		Ronald L. Graham, Jaroslav Nešetřil, Steve Butler.
+		\newblock {The Mathematics of Paul Erdős II}.
+		\newblock Springer, 1990.
+
+	\end{thebibliography}	
+
+	\end{document}
