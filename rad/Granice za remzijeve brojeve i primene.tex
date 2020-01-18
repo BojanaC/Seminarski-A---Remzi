@@ -41,9 +41,9 @@
 	\newline
 	\begin{table}[h]
 	    \centering
-	    \begin{tabular}{|c|c|c|c|c|c|}
+	    \begin{tabular}{|c|c|c|c|c|}
 	    \hline
-	    R(l_1,l_2    &  1 & 2 & 3 & .... \\
+	    $R(l_1,l_2)$   &  1 & 2 & 3 & \ldots \\
 	    \hline
 	       1  & 1 & 1 & 1 &  1 \\
 	       \hline
@@ -54,14 +54,14 @@
 	       ... & 1 & ... & ... & ... \\
 	       \hline
 	    \end{tabular}
-	    \caption{R(l_1,_2=1,2}
+	    \caption{$R(l_1,_2=1,2$}
 	\end{table}
 	
 	\begin{table}[h]
 	    \centering
 	    \begin{tabular}{|c|c|c|c|c|c|}
 	    \hline
-	    R(l_1,l_2    &  3 & 4 & 5 & 6 \\
+	    $R(l_1,l_2)$    &  3 & 4 & 5 & 6 \\
 	    \hline
 	       3  & 6 & 9 & 14 &  18 \\
 	       \hline
@@ -72,20 +72,20 @@
 	       6 & 18 & ... & ... & ... \\
 	       \hline
 	    \end{tabular}
-	    \caption{R(l_1,_2>2}
+	    \caption{$R(l_1,_2>2)$}
 	    \end{table}
 	
 
-	\begin{Teorema}
+	\begin{teorema}
 	\[
 	R(l_1,1)= (1,l_2) = 1
 	\]
-	\end{Teorema}
-	\begin{Teorema}
+	\end{teorema}
+	\begin{teorema}
 	\[
 	R(l,2)=R(2,l)=l
 	\]
-	\end{Teorema}
+	\end{teorema}
 	% Treba li dokazivati ovo?
 
 		\newpage
@@ -93,11 +93,11 @@
 
 		\section{Gornja ograničenja za Remzijeve brojeve}
 
-	\begin{Teorema}
+	\begin{teorema}
 	\[
 	R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 	\]
-	\end{Teorema}
+	\end{teorema}
 	\dokaz{
 	Iz prethodne teoreme znamo da $R(2,l_1)=l_1$ i $R(2,l_2)=l_2$. Koristeći induciju potvrđujemo da ovo važi i za svako $t$ i $s$ takvo da $t\leq l_2$ i $s<l_2$ ili $s\leq l_1$ i $t<l_2$.
 
@@ -153,13 +153,12 @@
 	\[
 	R(l_1,l_2) \leq {l_1+l_2-2 \choose l_1-1}
 	\]
-	}
 	Prvu nejednakost dokazali smo %dodaću na kraju
 	, a samu jednakost upotreom Paskalovog identiteta ${n \choose l_2} = {n-1 \choose l_2-1} + {n-1 \choose l_2}$.
-	}
+}
 	
 	\begin{teorema}
-Za k \geq 2 važi 
+Za $k \geq 2$ važi 
 
 $ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1) $
 \end{teorema}
@@ -173,9 +172,8 @@ Ovu teoremu dokazaćemo takođe indukcijom. Naša baza biće Remzijeva teorema z
 \]
 \[
 R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
-}
 \]
-
+}
 
 	\section{Donja ograničenja za Remzijeve brojeve}
 	\begin{teorema}\label{dot1}
