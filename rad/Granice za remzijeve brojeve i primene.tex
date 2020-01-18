@@ -33,17 +33,17 @@
 		
 		\newpage 
 		%Uredicu
-		Za svaka dva broja $l$ i $k$ možemo pronaći prirodan broj $n$, takav da svai graf sa $n$ brojem čvorova u sebi sadrži potpun podgraf sa $l$ čvorova ili njegov komplement sadrži podgraf sa $k$ nezavisnih čvorova.
+		Za svaka dva broja $l_1$ i $l_2$ možemo pronaći prirodan broj $n$, takav da svai graf sa $n$ brojem čvorova u sebi sadrži potpun podgraf sa $l_1$ čvorova ili njegov komplement sadrži podgraf sa $l_2$ nezavisnih čvorova.
 	\newline
 	Najmanji broj za koji ovo važi naziva se \textbf{Remzijev broj} i on se zapisuje kao $R(l,k)$ 
 	\newline
-	Tačne vrednosti Remzijevih brojeva se teško računaju i uglavnom su samo ograničeni intervalima. Trenutno je poznato 9 Remzijevih brojeva za $k,l>2$.
+	Tačne vrednosti Remzijevih brojeva se teško računaju i uglavnom su samo ograničeni intervalima. Trenutno je poznato 9 Remzijevih brojeva za $l_1,l_2>2$.
 	\newline
 	\begin{table}[h]
 	    \centering
 	    \begin{tabular}{|c|c|c|c|c|c|}
 	    \hline
-	    R(k,l)     &  1 & 2 & 3 & .... \\
+	    R(l_1,l_2    &  1 & 2 & 3 & .... \\
 	    \hline
 	       1  & 1 & 1 & 1 &  1 \\
 	       \hline
@@ -54,13 +54,31 @@
 	       ... & 1 & ... & ... & ... \\
 	       \hline
 	    \end{tabular}
-	    \caption{R(k,l)≤2}
-
+	    \caption{R(l_1,_2=1,2}
 	\end{table}
+	
+	\begin{table}[h]
+	    \centering
+	    \begin{tabular}{|c|c|c|c|c|c|}
+	    \hline
+	    R(l_1,l_2    &  3 & 4 & 5 & 6 \\
+	    \hline
+	       3  & 6 & 9 & 14 &  18 \\
+	       \hline
+	       4 & 9 & 18 & ... & ...\\
+	       \hline
+	       5 & 14 & ... & ... & ... \\
+	       \hline
+	       6 & 18 & ... & ... & ... \\
+	       \hline
+	    \end{tabular}
+	    \caption{R(l_1,_2>2}
+	    \end{table}
+	
 
 	\begin{Teorema}
 	\[
-	R(l,1)= (1,k) = 1
+	R(l_1,1)= (1,l_2) = 1
 	\]
 	\end{Teorema}
 	\begin{Teorema}
@@ -73,41 +91,41 @@
 		\newpage
 		%ako mislite da nešto nije dobro ili se treba prepraviti, označite
 
-		\section{Gornje granice}
+		\section{Gornja ograničenja za Remzijeve brojeve}
 
 	\begin{Teorema}
 	\[
-	R(l,k) \leq R(k-1, l) + R(k, l-1)
+	R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 	\]
 	\end{Teorema}
 	\dokaz{
-	Iz prethodne teoreme znamo da $R(2,l)=l$ i $R(2,k)=k$. Koristeći induciju potvrđujemo da ovo važi i za svako $t$ i $s$ takvo da $t\leq k$ i $s<l$ ili $s\leq l$ i $t<k$.
+	Iz prethodne teoreme znamo da $R(2,l_1)=l_1$ i $R(2,l_2)=l_2$. Koristeći induciju potvrđujemo da ovo važi i za svako $t$ i $s$ takvo da $t\leq l_2$ i $s<l_2$ ili $s\leq l_1$ i $t<l_2$.
 
-	Pretpostavimo sada suprotno, tj. da važi tvrđenje $R(l,k) \geq R(k-1, l) + R(k, l-1)$, odnosno da postoji graf sa $R(l,k)$ čvorova koji ne sadrži podgraf sa $l-1$ čvorova niti njegov komplement sadrži podgraf sa $k-1$ čvorova.
+	Pretpostavimo sada suprotno, tj. da važi tvrđenje $R(l_1,l_2) \geq R(l_2-1, l_1) + R(l_2, l_1-1)$, odnosno da postoji graf sa $R(l_1,l_2)$ čvorova koji ne sadrži podgraf sa $l_1-1$ čvorova niti njegov komplement sadrži podgraf sa $l_2-1$ čvorova.
 
 	Neka je $u$ proizvoljan broj čvorova grafa $G$, broj njemu susednih čvorova označićemo sa $N$, a broj nesusednih čvorova biće $M$.
 	To se drugačije može zapisati kao $M=V(G)-N_G(u)-{u}$.
-	Kako ne bi važilo da graf $G$ sadrži podgraf sa $k-1$ čvorova mora da važi $N\leq R(k-1, l)-1 $, a samim tim i $M \leq R(k, l-1)-1 $. 
+	Kako ne bi važilo da graf $G$ sadrži podgraf sa $l_2-1$ čvorova mora da važi $N\leq R(l_2-1, l_1)-1 $, a samim tim i $M \leq R(l_2, l_1-1)-1 $. 
 	Ukupan broj čvorova $n$ jednak je zbiru navedenog (čvora $u$, kao i njegovih susednih i nesusednih čvorova).
 	\[
 	n= N+M+1
 	\]
 	\[
-	n= R(k-1, l)-1 + R(k, l-1)-1+1
+	n= R(l_2-1, l_1)-1 + R(l_2, l_1-1)-1+1
 	\]
 	\[
-	n= R(k-1, l)+ R(k, l-1)-1
+	n= R(l_2-1, l_1)+ R(l_2, l_1-1)-1
 	\]
 	Dobijeni izraz je kontradikcija, te sledi tačno tvrđenje ove teoreme.
 	}
 
 
 		\begin{teorema}
-	\[R(l,k) \leq {l+k-2\choose l-1} 
+	\[R(l_1,l_2) \leq {l_1+l_2-2\choose l_1-1} 
 	\]
 	\end{teorema}
 	\dokaz{
-	Kod ovog dokaza koristićemo indukciju. Naša baza biće da dokažemo da nejednakost važi za $l=k=2$, odnosno
+	Kod ovog dokaza koristićemo indukciju. Naša baza biće da dokažemo da nejednakost važi za $l_1=l_2=2$, odnosno
 	\[ R(2,2) \leq {2+2-2 \choose 2-1}
 	\]
 	\[
@@ -116,32 +134,52 @@
 	\[
 	2 \leq 2
 	\]
-	Pretpostavimo sada da važi $\forall(l,k)$  pri čemu je $l+k \geq 4$.
+	Pretpostavimo sada da važi $\forall(l_1,l_2)$  pri čemu je $l_1+l_2 \geq 4$.
 
-	\[l,k \geq 2
+	\[l_1,l_2 \geq 2
 	\]
 	\[
-	l+k=n+1
+	l_1+l_2=n+1
 	\]
 	\[
-	R(l,k) \leq R(l-1, k) + R(l, k-1)
+	R(l_1,l_2) \leq R(l-1, l_2) + R(l_1, l_2-1)
 	\]
 	\[
-	R(l,k) \leq {{l-1+k-2 \choose l-1-1} + {l+k-1-2 \choose l-1}}
+	R(l_1,l_2) \leq {{l_1-1+l_2-2 \choose l_1-1-1} + {l_1+l_2-1-2 \choose l_1-1}}
 	\]
 	\[
-	R(l,k) \leq {{l+k-3 \choose l-2} + {l+k-3 \choose l-1}}
+	R(l_1,l_2) \leq {{l_1+l_2-3 \choose l_1-2} + {l_1+l_2-3 \choose l_1-1}}
 	\]
 	\[
-	R(l,k) \leq {l+k-2 \choose l-1}
+	R(l_1,l_2) \leq {l_1+l_2-2 \choose l_1-1}
 	\]
 	}
 	Prvu nejednakost dokazali smo %dodaću na kraju
-	, a samu jednakost upotreom Paskalovog identiteta ${n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}$.
+	, a samu jednakost upotreom Paskalovog identiteta ${n \choose l_2} = {n-1 \choose l_2-1} + {n-1 \choose l_2}$.
+	}
+	
+	\begin{teorema}
+Za k \geq 2 važi 
+
+$ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1) $
+\end{teorema}
+
+
+Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$ za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$.
+
+\dokaz{
+Ovu teoremu dokazaćemo takođe indukcijom. Naša baza biće Remzijeva teorema za dve boje, odnosno $k=2$. 
+\[R(l_1,l_2) \leq 2+ R(l_2-1, l_1) -1 + R(l_2, l_1-1)-1
+\]
+\[
+R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
+}
+\]
+
 
 	\section{Donja ograničenja za Remzijeve brojeve}
 	\begin{teorema}\label{dot1}
-	Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k,k) > n$.
+	Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k, k) > n$.
 	\dokaz{
 		Posmatrajmo proizvoljno bojenje grana grafa $K_n$ u dve boje - crvenu i plavu takvo da je verovatnoća da je grana $uv$ u grafu obojena crvenom bojom jednaka verovatnoći da je 		           obojena plavom bojom i iznosi 
 		$$P(uv \text{ je crvena}) = P(uv \text{ je plava}) = \frac{1}{2}.$$
