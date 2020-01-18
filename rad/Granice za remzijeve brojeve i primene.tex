@@ -118,8 +118,6 @@
 	\]
 	Dobijeni izraz je kontradikcija, te sledi tačno tvrđenje ove teoreme.
 	}
-	
-	Ako su $R(l_2, L_1-1)$ i $R(l_2-1, l_1)$ parni brojevi važi stroga nejednakost, odnosno: $R(l_1,l_2) < R(l_2-1, l_1) + R(l_2, l_1-1)$ .
 
 
 		\begin{teorema}
@@ -166,7 +164,7 @@ $ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}
 \end{teorema}
 
 
-Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$, za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$ odnosno postoji kompletan graf $G$ obojen sa $k$ boja pri čemu je grana $l_i$ obojena istom bojom za neko $1 \leq i \leq k$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$. 
+Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$ za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$.
 
 \dokaz{
 Ovu teoremu dokazaćemo takođe indukcijom. Naša baza biće Remzijeva teorema za dve boje, odnosno $k=2$. 
@@ -176,7 +174,8 @@ Ovu teoremu dokazaćemo takođe indukcijom. Naša baza biće Remzijeva teorema z
 R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 \]
 }
-% ja stvarno nisam znala kako tacno ispisati nastavak teoreme, ako nesto pronadjem, dopisacu
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	\section{Donja ograničenja za Remzijeve brojeve}
 	\begin{teorema}\label{dot1}
@@ -185,7 +184,7 @@ R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 		Posmatrajmo proizvoljno bojenje grana grafa $K_n$ u dve boje - crvenu i plavu takvo da je verovatnoća da je grana $uv$ u grafu obojena crvenom bojom jednaka verovatnoći da je 		           obojena plavom bojom i iznosi 
 		$$P(uv \text{ je crvena}) = P(uv \text{ je plava}) = \frac{1}{2}.$$
 		\newline
-		   Prvo ćemo odrediti verovatnoću da je neki k-podskup $K_k$ početnog grafa monohromatski. 
+		Prvo ćemo odrediti verovatnoću da je neki k-podskup $K_k$ početnog grafa monohromatski. 
 		Sa $M_s$ označimo događaj da je $K_k$ monohromatski. Kako nam od svih mogućih bojenja ovog k-podskupa odgovaraju samo dva gde su sve grane isključivo crvene ili plave dobijamo
 		da je
 		$$P(M_s) = 2\left(\frac{1}{2}\right)^{\binom{k}{2}} = 2 ^ {1 - \binom{k}{2}}.$$
@@ -217,6 +216,37 @@ R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 		sadrži crveni $K_m$. Sa druge strane najveći monohromatski plavi kompletan podgraf nema više od $(n - k - 1) + (k + 1 - 1) = n - 1$ čvorova, pa 			graf $G$ sigurno ne sadrži ni plavi $K_n$. Odavde sledi $R(m,n) > r_1 + r_2 - 2$ odakle dobijamo traženu nejednakost. 
 	}
 	\end{teorema}
+	\begin{teorema}\label{dot4}
+	Neka su dati prirodni brojevi $m, n \geq 2$. Tada važi $$R(m,n) \geq R(m,n-1) + 2m - 3.$$
+	\dokaz{
+		Neka je $r = R(m, n - 1)$ i $G_1 = K_{r - 1}$ takav da ne sadrži crveni $K_m$ i plavi $K_{n-1}$. Dokažimo da $G_1$ sigurno sadrži $K_{m - 1}$.
+		Pretpotstavimo suprotno. Tada u $G_1$ možemo dodati čvor $u$ i povezati ga sa svima ostalima crvenom bojom. Neka je $k$ takvo da je $K_k$
+		najveći monohromatski crven podgraf grafa $G_1$. Tada ako mu dodamo čvor $u$ on postaje $K_{k + 1}$. Ako je $k < m - 1$ tj. $k + 1< m$ 				onda graf nastao dodavanjem čvora $u$ na ovaj način ima $r$ čvorova i ne sadrži ni crveni $K_m$ ni plavi $K_{n - 1}$, što je kontradikcija sa 				izborom $r$. \newline
+		U daljem delu dokaza koristićemo samo činjenicu da onda postoji i crven $K_{m - 2}$. Obeležimo njegove čvorove sa $u_1, u_2, \dots,u_{m - 2}$.
+		Obeležimo sada sa $G_2$ graf koji nastaje dodavanjem još $m - 2$ čvorova $v_1, v_2, \dots,v_{m - 2}$, tako da $G_2$ bude $K_{r + m - 3}$ i 
+		gde su nove dodate grane incidentne sa $v$ čvorovima obojene na sledeći način.
+		Za svako $i$ povezaćemo $u_i$ i $v_i$ plavom granom, a za svako $i \neq j$ $u_i$ i $v_j$ povežemo crveno, i $v_i$ sa $v_j$ takođe crveno.
+		Za svako $x \in V(G_1)$ i $x \notin \{u_1, u_2, \dots,u_{m - 2}\}$ povežimo $v_i$ i $x$ istom bojom kao i što je grana $xu_i$. Na osnovu ovog 
+		bojenja jasno je da se neko $v_i$ može nalaziti u nekom crvenom monohromatskom kompletnom podgrafu $G_2$ akko se na njegovom mestu
+		u $G_1$ nalazio $u_i$. Pošto je $u_i v_i$ plavo oni se zajedno ne mogu nalaziti u njemu pa $G_2$ ne sadrži crveni $K_m$. Sa druge strane se
+		$K_{n - 1}$ može pojaviti. Jasno je da on mora sadržati bar jedan od čvorova iz $\{v_1, v_2, \dots,v_{m - 2}\}$, ali pošto su svaka dva čvora iz
+		tog skupa povezana crveno, dobijamo da svaki $K_{n - 1}$ mora sadržati tačno jedan čvor $v_i$ i njegov parnjak $u_i$. \newline
+		Konstruišimo sada graf $G_3$ dodavanjem još $m - 1$ čvorova $w_1, w_2, \dots, w_{m - 1}$ u graf $G_2$ koji su povezani na 						sledeći način. Za svako $i \neq j$ $w_i w_j$ je crveno, $w_i y$ je plavo za svako $y$ koje nije $u_j$, $v_j$ ili $w_j$. Za svako $i$ i $j$ $u_i w_j$
+		je crveno za $i \geq j$, dok je u suprotnom plavo. Sa druge strane bojimo $v_i w_j$ crveno za $i < j$, a u suprotnom u plavo. Da bismo završili
+		dokaz potrebno je još pokazati da ovako dobijeni graf $G_3 = K_{r + 2m - 4}$ ne sadrži crveni $K_m$ ni plavi $K_n$. \newline
+		Pretpotstavimo suprotno, prvo da postoji crveni $K_m$. Tada se u njemu mora nalaziti bar jedan $w_i$, jer $G_2$ ne sadrži takav podgraf. Kako 			je svaki $w_i$ povezan plavo sa svakim $y$ koje nije među $u$ i $v$ čvorovima, sledi da se $K_m$ sastoji isključivo od njih i $w$ čvorova. Neka je
+		$k$ indeks najmanjeg, a $l$ indeks najvećeg $w$ čvora u $K_m$. Tada se u posmatranom $K_m$ nalazi ne više od $l - k + 1$ $w$ čvorova.
+		Pored toga svako $u_i$, mora ispunjavati uslov $i \geq l$, a svako $v_i$, uslov $i < k$. Zato dobijamo da je maksimalan broj čvorova u crvenom
+		$K_m$ jednak $(l - k + 1) + (m - 1 - l) + (k - 1) = m - 1$. Kontradikcija. \newline
+		Pretpotstavimo sada da postoji plavi $K_n$. Kako su svi $w$ čvorovi povezani međusobno crveno, a bar jedan se mora nalaziti u datom $K_n$, 
+		onda je to tačno jedan $w_i$. To znači da je posmatrani $K_n$ dobijen dodavanjem čvora $w_i$ na već postojeći $K_{n - 1}$ iz $G_2$. Ipak
+		već smo dokazali da se u svakom takvom $K_{n - 1}$ nalazi tačno jedan par čvorova $u_j$ i $v_j$. Odatle dobijamo da su i $w_i u_j$ i $w_i v_j$
+		povezani plavo, što je nemoguće zbog izbora bojenja grana incidentnih sa $w_i$. Kontradikcija. \newline
+		Tako dobijamo da postoji $K_{r + 2m - 4}$ takav da ne sadrži ni crveni $K_m$ ni plavi $K_n$ pa mora važiti $R(m,n) \geq R(m,n-1) + 2m - 3$.
+	}
+	\end{teorema}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 		\section{Primene Remzijeve teoreme}
 		%sur i primena sura(citirati Sura)
@@ -277,15 +307,6 @@ R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 		Ronald L. Graham, Jaroslav Nešetřil, Steve Butler.
 		\newblock {The Mathematics of Paul Erdős II}.
 		\newblock Springer, 1990.
-		
-		Chung, F.R.K., R.L. Graham and R.M.Wilson.
-		\newblock {A Survey of Bounds for Classical Ramsey Numbers}.
-		\newblock Journal of graph theory, 1989.
-		% posto nisam citirala, naknadno cu ovde dodati strane koje sam koristila
-		
-		J.G.Kalbfleisch
-		\newblock {Upper Bounds for Some Ramsey Numbers}
-		\newblock Journal of combinatorial theory, 1967.
 
 	\end{thebibliography}	
 
