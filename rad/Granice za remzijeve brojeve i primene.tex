@@ -203,6 +203,17 @@ R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 		Ako postoji $p$ za koji je krajnji izraz manji od 1, onda zaključujemo da postoji $K_n$  koji sadrži potpuno crveni $K_k$ ili potpuno plavi $K_l$, pa mora biti $R(k,l)>n$.
 	}
 	\end{teorema}
+	\begin{teorema}\label{dot3}
+	Neka su dati prirodni brojevi $n$, $m$ i $k$ tako da je $1\leq k \leq n - 2$. Tada je $$R(m,n) \geq R(m, n - k) + R(m, k + 1) - 1.$$ 
+	\dokaz{
+		Neka je $r_1 = R(m, n - k)$ i $r_2 = R(m, k + 1)$ i bez umanjenja opštosti prva boja crvena, a druga plava. Posmatrajmo grafove 
+		$G_1 =K_{r_1 - 1}$ i $G_2 = K_{r_2 - 1}$, takve da su im sve grane obojene u crvenu ili plavu boju i da $G_1$ ne sadrži nijedan crveni $K_m$ i
+		nijedan plavi $K_{n - k}$, a $G_2$ ne sadrži nijedan crveni $K_m$ ni plavi $K_{k + 1}$ podgraf. Primetimo da na osnovu definicije Remzijevih
+		brojeva ovakvi grafovi siguro postoje. Neka je $G = G_1 \bigtriangledown G_2$, tako da svaku granu $uv$, gde $u \in V(G_1)$ i $v \in V(G_2)$
+		obojimo u plavo. Sada vidimo da je $G = K_{r_1 + r_2 - 2}$ i kako su sve dodate grane između grafova $G_1$ i $G_2$ plave, jasno je da $G$ ne
+		sadrži crveni $K_m$. Sa druge strane najveći monohromatski plavi kompletan podgraf nema više od $(n - k - 1) + (k + 1 - 1) = n - 1$ čvorova, pa 			graf $G$ sigurno ne sadrži ni plavi $K_n$. Odavde sledi $R(m,n) > r_1 + r_2 - 2$ odakle dobijamo traženu nejednakost. 
+	}
+	\end{teorema}
 
 		\section{Primene Remzijeve teoreme}
 		%sur i primena sura(citirati Sura)
