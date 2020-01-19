@@ -118,6 +118,13 @@
 	\]
 	Dobijeni izraz je kontradikcija, te sledi tačno tvrđenje ove teoreme.
 	}
+	
+	Ako su $R(l_2, l_1-1)$ i $R(l_2-1, l_1)$ parni brojevi, važi stroga nejednakost, odnosno: 
+	\[
+	R(l_1,l_2) < R(l_2-1, l_1) + R(l_2, l_1-1)
+	\]
+	
+	%.............
 
 
 		\begin{teorema}
@@ -156,6 +163,7 @@
 	Prvu nejednakost dokazali smo %dodaću na kraju
 	, a samu jednakost upotreom Paskalovog identiteta ${n \choose l_2} = {n-1 \choose l_2-1} + {n-1 \choose l_2}$.
 }
+	%...............
 	
 	\begin{teorema}
 Za $k \geq 2$ važi 
@@ -164,7 +172,7 @@ $ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}
 \end{teorema}
 
 
-Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$ za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$.
+Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$, za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$ odnosno da postoji kompletan graf $G$ obojen sa $k$ boja, pri čemu je $l_i$ grana obojena istom bojom za neko $1 \leq i \leq k$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$. 
 
 \dokaz{
 Ovu teoremu dokazaćemo takođe indukcijom. Naša baza biće Remzijeva teorema za dve boje, odnosno $k=2$. 
@@ -174,6 +182,7 @@ Ovu teoremu dokazaćemo takođe indukcijom. Naša baza biće Remzijeva teorema z
 R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 \]
 }
+% stvarno nisam uspela da ispisem dokaz do kraja, ako imate neku pomoc slusam
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -307,6 +316,17 @@ R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 		Ronald L. Graham, Jaroslav Nešetřil, Steve Butler.
 		\newblock {The Mathematics of Paul Erdős II}.
 		\newblock Springer, 1990.
+		
+		J.G.Kalbfleisch.
+		\newblock {Upper Bounds for Some Ramsey Numbers}
+		\new block Journal of combinatorial theory, 1967.
+		
+		Chung, F.R.K., R.L. Graham, R.M. Wilson.
+		\newblock {A survey of Bounds for Classical Ramsey Numbers}
+		\newblock Journal of graph theory, 1989.
+		%posto nisam citirala, dodacu naknadno koje strane sam koristila u nekim delovima
+
+
 
 	\end{thebibliography}	
 
