@@ -211,42 +211,32 @@ Sada bi trebalo da sledi $n+k > n+k-1$ što je kontradikcija. Time je Dirihleov 
 	%...............
 	
 	\begin{teorema}
-Za $k \geq 2$ važi 
-
+Za $k \geq 2$ važi \newline
 $ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1) $
-\end{teorema}
-
-
-Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$, za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$ odnosno da postoji kompletan graf $G$ obojen sa $k$ boja, pri čemu je $l_i$ grana obojena istom bojom za neko $1 \leq i \leq k$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$. 
-
 \dokaz{
-Uzmimo da je:
-\[
-r_1= R(l_1-1, l_2, ..., l_k)
-\]
-\[
-r_2= R(l_1, l_2-1, ..., l_k)
-\]
-\[
-\vdots
-\]
-\[
-r_k= R(l_1, l_2, ..., l_k-1)
-\]
-Posmatramo proizvoljan graf $G$ sa $n$ čvorova u kojem su grane obojene u $k$ boja.
-Uočimo proizvoljan čvor $v$. Na osnovu opšteg Dririhleovog principa (...) i (...) sledi da je $n \rightarrow (l_1,l_2,...,l_k) $ ako i samo ako $r_1 + r_2 + ... + r_k \leq (n-1)+k-1 $ odnosno:
-\[
-n \geq r_1+ r_2 + ... + r_k-k+2
-\]
-\[
-n \geq 2 + \sum\limits_{i=1}^{k}(r_i-1)
-\]
-Iz ovoga sledi tvrdjenje:
-\[
-R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1)
-\]	
-
+	Ova teorema dokazuje se slično kao teorema 2.1. samo što sada imamo $k$ boja. Neka je
+	\begin{align*}
+	   r_1 &= R(l_1 - 1, l_2, \dots, l_k) \\
+	   r_2 &= R(l_1, l_2 - 1, \dots, l_k) \\
+	   &\;\;\vdots \notag \\
+	  r_k &= R(l_1, l_2, \dots, l_k - 1) \\
+	\end{align*}
+	Odredimo $n$ za koje sigurno važi da je 
+	$$n \rightarrow (l_1, l_2, \dots, l_k)$$
+	Posmatrajmo proizvoljan graf $G$ sa $n$ čvorova u kojem su grane obojene u $k$ boja.
+	U njemu uočimo proizvoljan čvor $u$. Tada $u$ ima $n - 1$ 
+	suseda sa kojima je povezan granama različitih boja. Odredimo koje vrednosti $n$ zadovoljavaju osobinu da među $n - 1$ suseda čvora $u$ sigurno
+	možemo pronaći $r_1$ čvorova povezanih sa $u$ u prvoj boji ili $r_2$ čvorova povezanih sa $u$ u drugoj boji ili $\dots$ ili $r_k$ čvorova povezanih sa 		$u$ u $k$-toj boji. Na osnovu uopštenog Dirihleovog principa dobijamo da $n$ zadovoljava nejednakost
+	\begin{align} r_1 + r_2 + \dots r_k \leq (n - 1) + k - 1 \end{align}
+	Ako je ispunjen ovaj uslov sigurno možemo pronaći bar jednu boju $i$ tako da je čvor $u$ povezan sa bar $r_i$ suseda u toj boji. Obeležimo podgraf
+	indukovan sa tih $r_i$ čvorova sa $H$. Ako se u njemu nalazi $j$-monohromatski $K_{l_j}$, gde $j \neq i$ onda se on nalazi i u $G$. U suprotnom mora          
+	se pojaviti $K_{l_i - 1}$ koji dodavanjem čvora $u$ u grafu $G$ postaje $K_{l_i}$. Na osnovu ovoga zaključujemo da je 
+	$n \rightarrow (l_1, l_2, \dots, l_k)$, a samim tim \newline
+	$$R(l_1, l_2, \dots, l_k) \leq n,$$ gde je najmanje $n$ koje zadovoljava uslove nejednakosti (1)
+	 $$n = 2 - k + r_1 + r_2 + \dots + r_k = 2 + \sum_{i = 1}^{k} (r_i - 1)$$
+	 iz čega sledi tražena nejednakost.
 }
+\end{teorema}
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	\section{Donja ograničenja za Remzijeve brojeve}
