@@ -33,7 +33,7 @@
 		
 		%\newpage 
 		%Uredicu
-		Za svaka dva broja $l_1$ i $l_2$ možemo pronaći prirodan broj $n$, takav da svai graf sa $n$ brojem čvorova u sebi sadrži potpun podgraf sa $l_1$ čvorova ili njegov komplement sadrži podgraf sa $l_2$ nezavisnih čvorova.
+		Za svaka dva broja $l_1$ i $l_2$ možemo pronaći prirodan broj $n$, takav da svaki graf sa $n$ brojem čvorova u sebi sadrži potpun podgraf sa $l_1$ čvorova ili njegov komplement sadrži podgraf sa $l_2$ nezavisnih čvorova.
 	\newline
 	Najmanji broj za koji ovo važi naziva se \textbf{Remzijev broj} i on se zapisuje kao $R(l,k)$ 
 	\newline
@@ -80,6 +80,10 @@
 	%d_G(V)= |N_G(V)|
 	%\]
 	%Ovo takodje dodati negde u uvod
+	
+	
+
+
 
 	\begin{teorema}
 	\[
@@ -98,6 +102,31 @@
 
 %.............
 		\section{Gornja ograničenja za Remzijeve brojeve}
+		
+		\begin{teorema}
+Dirihleov opšti princip govori o tome da ako su dati $n,k \in \mathbb{N} \setminus \{0\}$ gde je $l_1+ l_2, \ldots , + l_k \leq n+k-1$, za svako bojenje $\varphi : n \rightarrow r$ postoji $i \in k$, takvo da važi $|\varphi^{-1} \geq l_i|$.
+\end{teorema}
+\dokaz{
+\[
+ n,k \in \mathbb{N} \setminus \{0\}
+\]
+\[
+l_1, l_2,\ldots , l_k \in \mathbb{N} \setminus \{0\}
+\]
+\[
+l_1, l_2, \ldots , l_k \leq n+k-1
+\]
+Iz ovoga sledi $ \forall \varphi : (1,2,\ldots,n) \rightarrow (1,2,\ldots, k)(\exists i)(| \varphi^{-1}(i) \geq l_i|) $. Ako pretpostavimo suprotno, odnosno da ovo važi za svako $i$ dobijamo izraz:
+\[
+l_i \geq |\varphi^{-1}(i)|+1
+\]
+\[
+ \sum\limits_{i=1}^{k} l_i \geq n+k
+\]
+Sada bi trebalo da sledi $n+k > n+k-1$ što je kontradikcija. Time je Dirihleov princip dokazan.
+}
+		
+		
 
 	\begin{teorema}
 	\[
@@ -105,13 +134,14 @@
 	\]
 	\end{teorema}
 	\dokaz{
-	Iz prethodne teoreme znamo da $R(2,l_1)=l_1$ i $R(2,l_2)=l_2$. Koristeći induciju potvrđujemo da ovo važi i za svako $t$ i $s$ takvo da $t\leq l_2$ i $s<l_2$ ili $s\leq l_1$ i $t<l_2$.
+	Iz (...) znamo da $R(2,l_1)=l_1$ i $R(2,l_2)=l_2$. Koristeći induciju potvrđujemo da ovo važi i za svako $t$ i $s$ takvo da $t\leq l_2$ i $s<l_2$ ili $s\leq l_1$ i $t<l_2$.
 
-	Pretpostavimo sada suprotno, tj. da važi tvrđenje $R(l_1,l_2) \geq R(l_2-1, l_1) + R(l_2, l_1-1)$, odnosno da postoji graf sa $R(l_1,l_2)$ čvorova koji ne sadrži podgraf sa $l_1-1$ čvorova niti njegov komplement sadrži podgraf sa $l_2-1$ čvorova.
+	Pretpostavimo sada suprotno, tj. da važi tvrđenje $R(l_1,l_2) \geq R(l_2-1, l_1) + R(l_2, l_1-1)$, odnosno da postoji graf sa $R(l_1,l_2)$ čvorova koji ne sadrži podgraf izomorfan sa $K_{l_2}$ niti podgraf izomorfan sa $K_{l_1}$.
+	
 
 	Neka je $u$ proizvoljan broj čvorova grafa $G$, broj njemu susednih čvorova označićemo sa $N$, a broj nesusednih čvorova biće $M$.
 	To se drugačije može zapisati kao $M=V(G)-N_G(u)-{u}$.
-	Kako ne bi važilo da graf $G$ sadrži podgraf sa $l_2-1$ čvorova mora da važi $N\leq R(l_2-1, l_1)-1 $, a samim tim i $M \leq R(l_2, l_1-1)-1 $. 
+	Kako ne bi važilo da graf $G$ sadrži podgraf izomorfan sa $K_{l_2-1}$  mora da važi $N\leq R(l_2-1, l_1)-1 $, a samim tim i $M \leq R(l_2, l_1-1)-1 $. 
 	Ukupan broj čvorova $n$ jednak je zbiru navedenog (čvora $u$, kao i njegovih susednih i nesusednih čvorova).
 	\[
 	n= N+M+1
@@ -192,14 +222,32 @@ $ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}
 Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$, za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$ odnosno da postoji kompletan graf $G$ obojen sa $k$ boja, pri čemu je $l_i$ grana obojena istom bojom za neko $1 \leq i \leq k$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$. 
 
 \dokaz{
-Ovu teoremu dokazaćemo takođe indukcijom. Naša baza biće Remzijeva teorema za dve boje, odnosno $k=2$. 
-\[R(l_1,l_2) \leq 2+ R(l_2-1, l_1) -1 + R(l_2, l_1-1)-1
+Uzmimo da je:
+\[
+r_1= R(l_1-1, l_2, ..., l_k)
 \]
 \[
-R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
+r_2= R(l_1, l_2-1, ..., l_k)
 \]
-}
-% stvarno nisam uspela da ispisem dokaz do kraja, ako imate neku pomoc slusam
+\[
+\vdots
+\]
+\[
+r_k= R(l_1, l_2, ..., l_k-1)
+\]
+Posmatramo proizvoljan graf $G$ sa $n$ čvorova u kojem su grane obojene u $k$ boja.
+Uočimo proizvoljan čvor $v$. Na osnovu opšteg Dririhleovog principa (...) i (...) sledi da je $n \rightarrow (l_1,l_2,...,l_k) $ ako i samo ako $r_1 + r_2 + ... + r_k \leq (n-1)+k-1 $ odnosno:
+\[
+n \geq r_1+ r_2 + ... + r_k-k+2
+\]
+\[
+n \geq 2 + \sum\limits_{i=1}^{k}(r_i-1)
+\]
+Iz ovoga sledi tvrdjenje:
+\[
+R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1)
+\]	
+
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
