@@ -1,5 +1,5 @@
 	\documentclass{article}
-	\usepackage{lipsum}
+	%\usepackage{lipsum}
 	\usepackage[utf8]{inputenc}
 	\usepackage[T1]{fontenc}
 	\usepackage{amsfonts}
@@ -11,6 +11,7 @@
 	\author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
 
 	\theoremstyle{definition}
+	\newtheorem{definicija}{Definicija}[section]
 	\newtheorem{teorema}{Teorema}[section]
 	\newtheorem{posledica}{Posledica}[teorema]
 	\newtheorem{lema}[teorema]{Lema}
@@ -26,12 +27,11 @@
 		\newpage
 
 		\section{Uvod}
+		%$ 2^{\frac{k}{2}} \leq R(k,k)$ na osnovu Erdosevog dokaza \cite{theBook}
 
-		$ 2^{\frac{k}{2}} \leq R(k,k)$ na osnovu Erdosevog dokaza \cite{theBook}
-
-		\lipsum[1]
+		%\lipsum[1]
 		
-		\newpage 
+		%\newpage 
 		%Uredicu
 		Za svaka dva broja $l_1$ i $l_2$ možemo pronaći prirodan broj $n$, takav da svai graf sa $n$ brojem čvorova u sebi sadrži potpun podgraf sa $l_1$ čvorova ili njegov komplement sadrži podgraf sa $l_2$ nezavisnih čvorova.
 	\newline
@@ -293,7 +293,34 @@ R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 
 		}
 
-
+	\begin{definicija}
+		Polugrupa $\mathbf{S}$ je uređen par $(S,\cdot)$, takav da važi
+		\[
+			\cdot:S\times S \rightarrow S \quad\mathrm{i}\quad \forall x,y,z\in S: x\cdot (y\cdot z)=(x\cdot y)\cdot z.
+		\]
+		$\mathbf{S}$ je grupa ako dodatno važi:
+		\[
+			\exists e\in S\; \forall s \in S: e\cdot s=s\cdot e=s \quad \mathrm{i}
+		\]
+		\[
+		\forall s\in S\; \exists t \in S: s\cdot t=t\cdot s=e
+		\]
+	\end{definicija}
+	\begin{definicija}
+		Element $s$ polugrupe $\mathbf{S}=(S,\cdot)$ je idempotentan, ako je $s\cdot s=s$ 
+	\end{definicija}
+	\begin{teorema}
+		Neka je $\mathbf{S}=(S,\cdot)$ konačna polugrupa. Tada $\mathbf{S}$ sadrži bar jedan idempotentan element.
+	\end{teorema}
+	\dokaz{
+		%treba dodati jos definicija
+		Neka je $S$ konačna polugrupa čiji je konačan generišući skup $A$. Izaberimo beskonačnu reč $a_1 a_2\ldots$ nad $A$. Posmatrajmo bojenje  grafa $0,1,2,\ldots$ koje boji granu izmedju $i$ i $j$, $i\leq j$ u sliku $a_{i+1} \ldots a_j$ u $S$. Na osnovu Remzijeve teoreme za beskonačne grafove (\ref{RemziBesk}), moraju postojati $i<j<k$ izmedju kojih se nalaze grane iste boje, odnosno
+		\[
+			a_{i+1}\ldots a_j=a_{j+1}\ldots a_k=a_{i+1}\ldots a_k=	a_{i+1}\ldots a_j\cdot 	a_{j+1}\ldots a_k=a_{i+1}\ldots a_j\cdot 	a_{i+1}\ldots a_j.
+		\]
+		Dakle, elemenat $a_{i+1}\ldots a_j$ je idempotentan.
+		
+	}
 		\newpage
 
 	\begin{thebibliography}{99}
