@@ -135,7 +135,7 @@
 	Uzmimo da su $R(l_1-1, l_2)$ i $R(l_1, l_2-1)$ parni brojevi. Posmatramo graf $G$ sa $n+1$ čvorova, odnosno $n=R(l_2-1, l_1)+ R(l_2, l_1-1)-1$.
 	Treba pokazati da postoji neki podgraf $M$ koji ima $l_2$ medjusobno povezanih ili podgraf $N$ sa $l_1$ medjusobno nepovezanih čvorova. Broj čvorova neparnog stepena je u svakom grafu paran, a kako su $R(l_2-1, l_2)$ i $R(l_2, l_1-1$ parni brojevi, n je neparan. Iz toga zaključujemo da graf $G$ sadrži barem jedan čvor parnog stepena. Uzmimo da je to proizvoljan čvor $v$. Ako je njegov stepen veći ili jednak $R(l_2-1,l_1)$ onda neki podgraf indukovan njegovim susednim čvorovima može sadržati novi podgraf sa $l_2-1$ povezanih čvorova (Ako njima dodamo povezani $v$ čvor, biće ih $l_2$, te dobijamo naš podrgaf $M$), ili $l$ nepovezanih čvorova (što je zapravo podgraf $N$). 
 	\newline
-	U suprotnom, ako je stepen ovih čvorova strogo manji do $R(l_2-1,l_1)$, onda važi i $d_G(V) \leq R(l_2-1, l_1)-2$. Kada toj činjenici dodamo da je $n=R(l_2-1, l_1)+ R(l_2, l_1-1)-1$ sledi da je broj nesusednih čvorova čvora $v$ veći ili jednak sa $R(l_2, l_1-1)$. Iz ove nejednakosti možemo zaključiti da podgraf indukovan ovim čvorovima sadrži ili gorepomenuti podgraf $M$ (jer sadrži l_2 povezanih čvorova) ili podrgaf sa $l_1-1$ nepovezanih čvorova. Ukoliko njemu dodamo čvor $v$ koji nije povezan, dobijamo $l_1$ nepovezanih čvorova, odnosno podgraf $N$.
+	U suprotnom, ako je stepen ovih čvorova strogo manji do $R(l_2-1,l_1)$, onda važi i $d_G(V) \leq R(l_2-1, l_1)-2$. Kada toj činjenici dodamo da je $n=R(l_2-1, l_1)+ R(l_2, l_1-1)-1$ sledi da je broj nesusednih čvorova čvora $v$ veći ili jednak sa $R(l_2, l_1-1)$. Iz ove nejednakosti možemo zaključiti da podgraf indukovan ovim čvorovima sadrži ili gorepomenuti podgraf $M$ (jer sadrži $l_2$ povezanih čvorova) ili podrgaf sa $l_1-1$ nepovezanih čvorova. Ukoliko njemu dodamo čvor $v$ koji nije povezan, dobijamo $l_1$ nepovezanih čvorova, odnosno podgraf $N$.
 	\newline
 	Time smo dokazali pretpostavku da sko su brojevi $R(l_1-1, l_2)$ i $R(l_1, l_2-1)$ parni, onda svaki graf sa $n+1$ čvorova sadrži ili $M$ ili $N$ podgraf. Iz toga sledi stroga nejednakost $R(l_1,l_2) < R(l_2-1, l_1) + R(l_2, l_1-1)$ jer je $R(l_1,l_2) \leq n$. 
 	}
@@ -361,14 +361,17 @@ R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
 		\newblock {The Mathematics of Paul Erdős II}.
 		\newblock Springer, 1990.
 		
+		\bibitem{gornjeGr}
 		J.G.Kalbfleisch.
 		\newblock {Upper Bounds for Some Ramsey Numbers}
-		\new block Journal of combinatorial theory, 1967.
+		\newblock Journal of combinatorial theory, 1967.
 		
+		\bibitem{remziBr}
 		Rita Gajdač.
 		\newblock {Remzijevi brojevi}
 		\newblock 2019.
 		
+		\bibitem{remziGr}
 		Chung, F.R.K., R.L. Graham, R.M. Wilson.
 		\newblock {A survey of Bounds for Classical Ramsey Numbers}
 		\newblock Journal of graph theory, 1989.
