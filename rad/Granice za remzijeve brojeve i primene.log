@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.19)  20 JAN 2020 10:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.19)  20 JAN 2020 19:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -606,27 +606,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 100.
+(hyperref)                removing `\textasciicaron' on input line 102.
 
 [4]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 148.
+(amsmath)                 on input line 176.
 
+[5]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 206.
+(hyperref)                removing `\textasciicaron' on input line 252.
 
-[5]
-Overfull \hbox (7.27492pt too wide) in paragraph at lines 221--221
+[6]
+Overfull \hbox (7.27492pt too wide) in paragraph at lines 267--267
 \T1/cmr/m/n/10 Prvo ¢emo odred-iti verovat-no¢u da je neki k-podskup $\OML/cmm/
 m/it/10 K[]$ \T1/cmr/m/n/10 po£etnog grafa monohro-
  []
 
-[6]
-Overfull \hbox (3.12236pt too wide) detected at line 232
+
+Overfull \hbox (3.12236pt too wide) detected at line 278
 \OML/cmm/m/it/10 P [] \OMS/cmsy/m/n/10 ^^T [] \OML/cmm/m/it/10 P\OT1/cmr/m/n/10
  (\OML/cmm/m/it/10 A[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 
 (\OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T []\OML/cmm/m/it/10 
@@ -634,36 +635,35 @@ p[] \OT1/cmr/m/n/10 + [](1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 p\OT1/cmr/m/n/
 10 )[]
  []
 
-[7]
+[7] [8]
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 280.
-
-[8]
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 298.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 326.
 
 
-LaTeX Warning: Reference `RemziHiper' on page 9 undefined on input line 320.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 344.
 
 [9]
 
-LaTeX Warning: Reference `RemziBesk' on page 10 undefined on input line 349.
+LaTeX Warning: Reference `RemziHiper' on page 10 undefined on input line 366.
 
 
-Overfull \hbox (23.23134pt too wide) detected at line 349
+LaTeX Warning: Reference `RemziBesk' on page 10 undefined on input line 395.
+
+
+Overfull \hbox (23.23134pt too wide) detected at line 395
 \OML/cmm/m/it/10 a[] [] a[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 a[] [] a[] \OT1/
 cmr/m/n/10 = \OML/cmm/m/it/10 a[] [] a[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 a[]
  [] a[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 a[] [] a[] \OT1/cmr/m/n/10 = \OML
 /cmm/m/it/10 a[] [] a[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 a[] [] a[]:
  []
 
-[10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 384.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 384.
+[10] [11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 430.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 430.
  (./Granice za remzijeve brojeve i primene.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 384.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 384.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 430.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 430.
 Package rerunfilecheck Info: File `"Granice za remzijeve brojeve i primene".out
 ' has not changed.
 (rerunfilecheck)             Checksum: 38AB736407C3382CFA3384664F380291;246.
@@ -671,16 +671,16 @@ Package rerunfilecheck Info: File `"Granice za remzijeve brojeve i primene".out
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 384.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
  ) 
 Here is how much of TeX's memory you used:
- 5568 strings out of 494923
- 77646 string characters out of 6180742
- 167124 words of memory out of 5000000
+ 5570 strings out of 494923
+ 77664 string characters out of 6180742
+ 166124 words of memory out of 5000000
  8796 multiletter control sequences out of 15000+600000
  17745 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 28i,9n,31p,853b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,9n,31p,853b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/mihailo/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.6
 00pk> </home/mihailo/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti100
 0.600pk> </home/mihailo/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
@@ -699,11 +699,11 @@ f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on "Granice za remzijeve brojeve i primene.pdf" (11 pages, 18652
-1 bytes).
+Output written on "Granice za remzijeve brojeve i primene.pdf" (12 pages, 18897
+2 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 158 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
