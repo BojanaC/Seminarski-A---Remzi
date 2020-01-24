@@ -1,4 +1,5 @@
-\contentsline {section}{\numberline {1}Uvod}{3}{section.1}
-\contentsline {section}{\numberline {2}Gornja ograni\IeC {\v c}enja za Remzijeve brojeve}{4}{section.2}
-\contentsline {section}{\numberline {3}Donja ograni\IeC {\v c}enja za Remzijeve brojeve}{6}{section.3}
-\contentsline {section}{\numberline {4}Primene Remzijeve teoreme}{9}{section.4}
+\contentsline {section}{\numberline {1}Predgovor}{3}{section.1}
+\contentsline {section}{\numberline {2}Uvod}{3}{section.2}
+\contentsline {section}{\numberline {3}Gornja ograni\IeC {\v c}enja za Remzijeve brojeve}{5}{section.3}
+\contentsline {section}{\numberline {4}Donja ograni\IeC {\v c}enja za Remzijeve brojeve}{8}{section.4}
+\contentsline {section}{\numberline {5}Primene Remzijeve teoreme}{11}{section.5}

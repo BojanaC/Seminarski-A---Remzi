@@ -25,18 +25,73 @@
 		\tableofcontents
 
 		\newpage
-
-		\section{Uvod}
-		%$ 2^{\frac{k}{2}} \leq R(k,k)$ na osnovu Erdosevog dokaza \cite{theBook}
-
-		%\lipsum[1]
+		\section{Predgovor}
+		%dodati  o cemu je rad itd.
 		
-		%\newpage 
-		%Uredicu
-		Za svaka dva broja $l_1$ i $l_2$ možemo pronaći prirodan broj $n$, takav da svaki graf sa $n$ brojem čvorova u sebi sadrži potpun podgraf sa $l_1$ čvorova ili njegov komplement sadrži podgraf sa $l_2$ nezavisnih čvorova.
-	\newline
-	Najmanji broj za koji ovo važi naziva se \textbf{Remzijev broj} i on se zapisuje kao $R(l,k)$ 
-	\newline
+		\section{Uvod}
+	
+		Remzijeva teorija je oblast matematike koja se bavi ulsovima pod kojim se red mora pojaviti. Najjednostavnija teorema ovog tipa jeste Dirihleov princip:
+		
+		\begin{definicija}
+			Za prirodan broj $n>0$ definišemo 
+			\[
+			\underline{n}:=\{1,2,\ldots,n\}.
+			\]
+			Neka je dat skup $X$ i neka je $r\in \mathbb{N}\textbackslash \{0\}$.\\	
+			Bojenje skupa $X$ sa $r$ boja je funkcija $\chi:X\rightarrow r$
+			Podskup $Y\subseteq X$ nazivano monohromatskim (u odnosu na $\chi$), ako je
+			\[
+				\forall y_1,y_2:\chi(y_1)=\chi(y_2)
+			\]
+		\end{definicija}
+		\begin{teorema}[Dirihleov Princip]
+			Neka je $A$ konačan skup i neka je $0<r<|A|$.\\ Ako svaki element skupa $A$ obojimo sa jednom od datih r boja, onda su najmanje dva elementa objena istom bojom.
+		\end{teorema}
+		
+		
+		Dirihleov princip se može dodatno uopštiti u sledeće tvrđenje:
+		\begin{teorema}[Uopšteni Dirihleov princip]
+			Neka su dati $n,r \in \mathbb{N}$, kao i $l_1,\ldots,l_r \in \mathbb{N}\textbackslash\{0\}$, gde je
+			\[
+			l_1+\ldots+l_r\leq n+r-1.
+			\]
+			Tada za svako bojenje $\chi:\underline{n}\rightarrow\underline{r}$ postoje $i\in \underline{r}$,takvo da važi $|\chi^{-1}(i)|\geq l_i$
+		\end{teorema}
+	
+		Dirihleov princip i uopšteni Dirihleov princip služe kao osnova za sve teoreme Remzijevog tipa.
+		
+		Osnovna teorema Remzijeve teorije je Remzijeva teorema za grafove:
+		
+		\begin{definicija}
+		Za skup $X$ i prirodan broj $k>0$ definišemo
+		\[
+			[X]^k :=\{Y\subseteq X | \:|Y|=k\}.
+		\]
+		Pišemo
+		\[
+			n\rightarrow (l_1,\ldots,l_r)
+		\]
+		ako za svako bojenje $\chi:[\underline{n}]^2$ postoje $i\in \underline{r}$ i $T\subseteq \underline{n}$ sa $|T|=l_i$, takvi da je $[T]^2$ u odnosu na $\chi$ $i$-monohromatsko.	
+		\end{definicija}
+		\begin{teorema}[Remzijeva Teorema za grafove]
+			Neka $l_1,l_2 \in \mathbb{N}$. Tada postoji $n$, takvo da važi
+			\[
+			n\rightarrow(l_1,l_2)
+			\]
+		\end{teorema}
+	
+	\begin{definicija}
+		Najmanji broj $n$ za koji važi
+		\[
+		n\rightarrow(l_1,l_2)
+		\]
+		naziva se Remzijev broj i označavamo ga sa $R(l_1,l_2)$.
+	\end{definicija}
+
+	Remzijeva teorema se može proširiti na bojenja grafova sa više boja, kao i na hipergrafove itd...
+	%dopuniti sa ostalim teoremama
+	
+	
 	Tačne vrednosti Remzijevih brojeva se teško računaju i uglavnom su samo ograničeni intervalima. Trenutno je poznato 9 Remzijevih brojeva za $l_1,l_2>2$.
 	\newline
 	\begin{table}[h]
@@ -211,7 +266,7 @@ Sada bi trebalo da sledi $n+k > n+k-1$ što je kontradikcija. Time je Dirihleov 
 	%...............
 	
 	\begin{teorema}
-Za $k \geq 2$ važi 
+Za $k \geq 2$ važi \newline
 
 $ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1) $
 \end{teorema}
@@ -220,31 +275,27 @@ $ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}
 Neka su $l_1, l_2, l_3, ... , l_k \in \mathbb{N}$. Tada postoji neki Remzijev broj, neko $n$, za koje važi $n \rightarrow (l_1, l_2, l_3, ... , l_k)$ odnosno da postoji kompletan graf $G$ obojen sa $k$ boja, pri čemu je $l_i$ grana obojena istom bojom za neko $1 \leq i \leq k$. Najmanje $n$ za koje ovo važi označićemo kao $R(l)_k$. 
 
 \dokaz{
-Uzmimo da je:
-\[
-r_1= R(l_1-1, l_2, ..., l_k)
-\]
-\[
-r_2= R(l_1, l_2-1, ..., l_k)
-\]
-\[
-\vdots
-\]
-\[
-r_k= R(l_1, l_2, ..., l_k-1)
-\]
-Posmatramo proizvoljan graf $G$ sa $n$ čvorova u kojem su grane obojene u $k$ boja.
-Uočimo proizvoljan čvor $v$. Na osnovu opšteg Dririhleovog principa (...) i (...) sledi da je $n \rightarrow (l_1,l_2,...,l_k) $ ako i samo ako $r_1 + r_2 + ... + r_k \leq (n-1)+k-1 $ odnosno:
-\[
-n \geq r_1+ r_2 + ... + r_k-k+2
-\]
-\[
-n \geq 2 + \sum\limits_{i=1}^{k}(r_i-1)
-\]
-Iz ovoga sledi tvrdjenje:
-\[
-R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1)
-\]	
+Ova teorema dokazuje se slično kao teorema 2.1. samo što sada imamo $k$ boja. Neka je
+\begin{align*}
+r_1 &= R(l_1 - 1, l_2, \dots, l_k) \\
+r_2 &= R(l_1, l_2 - 1, \dots, l_k) \\
+&\;\;\vdots \notag \\
+r_k &= R(l_1, l_2, \dots, l_k - 1) \\
+\end{align*}
+Odredimo $n$ za koje sigurno važi da je 
+$$n \rightarrow (l_1, l_2, \dots, l_k)$$
+Posmatrajmo proizvoljan graf $G$ sa $n$ čvorova u kojem su grane obojene u $k$ boja.
+U njemu uočimo proizvoljan čvor $u$. Tada $u$ ima $n - 1$ 
+suseda sa kojima je povezan granama različitih boja. Odredimo koje vrednosti $n$ zadovoljavaju osobinu da među $n - 1$ suseda čvora $u$ sigurno
+možemo pronaći $r_1$ čvorova povezanih sa $u$ u prvoj boji ili $r_2$ čvorova povezanih sa $u$ u drugoj boji ili $\dots$ ili $r_k$ čvorova povezanih sa 		$u$ u $k$-toj boji. Na osnovu uopštenog Dirihleovog principa dobijamo da $n$ zadovoljava nejednakost
+\begin{align} r_1 + r_2 + \dots r_k \leq (n - 1) + k - 1 \end{align}
+Ako je ispunjen ovaj uslov sigurno možemo pronaći bar jednu boju $i$ tako da je čvor $u$ povezan sa bar $r_i$ suseda u toj boji. Obeležimo podgraf
+indukovan sa tih $r_i$ čvorova sa $H$. Ako se u njemu nalazi $j$-monohromatski $K_{l_j}$, gde $j \neq i$ onda se on nalazi i u $G$. U suprotnom mora          
+se pojaviti $K_{l_i - 1}$ koji dodavanjem čvora $u$ u grafu $G$ postaje $K_{l_i}$. Na osnovu ovoga zaključujemo da je 
+$n \rightarrow (l_1, l_2, \dots, l_k)$, a samim tim \newline
+$$R(l_1, l_2, \dots, l_k) \leq n,$$ gde je najmanje $n$ koje zadovoljava uslove nejednakosti (1)
+$$n = 2 - k + r_1 + r_2 + \dots + r_k = 2 + \sum_{i = 1}^{k} (r_i - 1)$$
+iz čega sledi tražena nejednakost.
 
 }
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
