@@ -7,6 +7,7 @@
 \usepackage{amsthm}
 \usepackage{hyperref}
 \usepackage[croatian]{babel}
+\usepackage{graphicx}
 \title{Granice za Remzijeve brojeve i primene}
 \date{15.1.2020}
 \author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
@@ -26,8 +27,6 @@
 	\tableofcontents
 	
 	\newpage
-	\section{Predgovor}
-	%dodati  o cemu je rad itd.
 	
 	\section{Uvod}
 	
@@ -92,66 +91,49 @@
 	Remzijeva teorema se može proširiti na bojenja grafova sa više boja, kao i na hipergrafove itd...
 	%dopuniti sa ostalim teoremama
 	
-	
-	Tačne vrednosti Remzijevih brojeva se teško računaju i uglavnom su samo ograničeni intervalima. Trenutno je poznato 9 Remzijevih brojeva za $l_1,l_2>2$.
-	\newline
-	\begin{table}[h]
-		\centering
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline
-			$R(l_1,l_2)$   &  1 & 2 & 3 & \ldots \\
-			\hline
-			1  & 1 & 1 & 1 &  1 \\
-			\hline
-			2 & 1 & 2 & 3 & ....\\
-			\hline
-			3 & 1 & 3 & ... & ... \\
-			\hline
-			... & 1 & ... & ... & ... \\
-			\hline
-		\end{tabular}
-		\caption{$R(l_1,_2=1,2$}
-	\end{table}
-	
-	\begin{table}[h]
-		\centering
-		\begin{tabular}{|c|c|c|c|c|c|}
-			\hline
-			$R(l_1,l_2)$    &  3 & 4 & 5 & 6 \\
-			\hline
-			3  & 6 & 9 & 14 &  18 \\
-			\hline
-			4 & 9 & 18 & ... & ...\\
-			\hline
-			5 & 14 & ... & ... & ... \\
-			\hline
-			6 & 18 & ... & ... & ... \\
-			\hline
-		\end{tabular}
-		\caption{$R(l_1,_2>2)$}
-	\end{table}
-	
-	% Stepen čvora je broj grana koje su sa njim incidentne. 
-	%\[
-	%d_G(V)= |N_G(V)|
-	%\]
-	%Ovo takodje dodati negde u uvod
-	
-	
-	
-	
-	
-	\begin{teorema}
-		\[
-		R(l_1,1)= (1,l_2) = 1
-		\]
+	\begin{teorema}[Remzijeva Teorema za hipergrafove]
+		Dopuniti ovo
 	\end{teorema}
-	\begin{teorema}
-		\[
-		R(l,2)=R(2,l)=l
-		\]
+	
+	\begin{teorema}[Remzijeva Teorema za beskonačne grafove]
+		Dopuniti ovo
 	\end{teorema}
-	% Treba li dokazivati ovo?
+
+	Tačne vrednosti Remzijevih brojeva je izuzetno teško izračunati. Poznato je $R(l_1,1)= (1,l_2) = 1$ i $R(l_1,2)= (2,l_2) = l$, ali za $l_1,l_2 \geq 2$ je poznato samo 9  tačnih vrednosti Remzijevih brojeva. Poznata su razna ograničenja koja važe u opštem slučaju, dok su bolja ograničenja poznata samo za neke od vrednosti $l_1\leq 10, l_2\leq 15$.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\textwidth]{remziTabela}
+		\caption{Poznate vrednosti i ograničenja Remzijevih brojeva\label{poznatiBrojevi}}
+	\end{figure}
+	
+		%\begin{table}[h]
+		%\centering
+		%\begin{tabular}{|c|c|c|c|c|c|c|}
+		%	$R(l_1,l_2)$   &  1 & 2 & 3 & 4 & 5 & 6\\
+		%	\hline
+		%	1  & 1 & 1 & 1 &  1 & 1 & 1 \\
+		%	\hline
+		%	2 & 1 & 2 & 3 &4 & 5 & 6\\
+		%	\hline
+		%	3 & 1 & 3 & 6 & 9 & 14 & 18 \\
+		%	\hline
+		%	4 & 1 & 4 & 9 & 18 & ? & ?\\
+		%	\hline
+		%	5 & 1 & 5 & 14 & ? & ? & ?\\
+		%	\hline
+		%	6 & 1 & 6 & 18 & ? & ? & ?\\
+		%	\hline
+		%\end{tabular}
+		%\caption{Poznate vrednosi Remzijevih brojeva}
+	%\end{table}
+	
+	
+	Iako je poznat samo mai broj tačnih vrednosti Remzijevih brojeva, postoje mnoge teoreme u vezi ograničenja za Remzijeve brojeve. 
+	
+	U ovom radu ćemo prvo navesti neke od teorema u vezi gornjih ograničenja za Remzijeve brojeve (brojeva $U$, $R(l_1,l_2)\leq U$), zatim neke od teorema u vezi donjih ograničenja (brojeva $L$, $L \leq R(l_1,l_2)$). Na kraju ćemo videti neke od primena Remzijeve teoreme i njenih uopštenja u rešavanju raznih problema.
+	
+	
 	
 	\newpage
 	%ako mislite da nešto nije dobro ili se treba prepraviti, označite
