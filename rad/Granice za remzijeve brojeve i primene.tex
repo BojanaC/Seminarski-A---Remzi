@@ -73,10 +73,10 @@
 		\]
 		ako za svako bojenje $\chi:[\underline{n}]^2$ postoje $i\in \underline{r}$ i $T\subseteq \underline{n}$ sa $|T|=l_i$, takvi da je $[T]^2$ u odnosu na $\chi$ $i$-monohromatsko.	
 	\end{definicija}
-	\begin{teorema}[Remzijeva Teorema za grafove]
-		Neka $l_1,l_2 \in \mathbb{N}$. Tada postoji $n$, takvo da važi
+	\begin{teorema}[Remzijeva Teorema za obojene grafove]
+		Neka $l_1,\ldots, l_r \in \mathbb{N}$. Tada postoji $n$, za koje važi
 		\[
-		n\rightarrow(l_1,l_2)
+		n\rightarrow(l_1,\ldots,l_r)
 		\]
 	\end{teorema}
 	
@@ -88,15 +88,31 @@
 		naziva se Remzijev broj i označavamo ga sa $R(l_1,l_2)$.
 	\end{definicija}
 	
-	Remzijeva teorema se može proširiti na bojenja grafova sa više boja, kao i na hipergrafove itd...
+	Remzijeva teorema se može proširiti na hipergrafove, kao i na beskonačne grafove.
 	%dopuniti sa ostalim teoremama
 	
-	\begin{teorema}[Remzijeva Teorema za hipergrafove]
-		Dopuniti ovo
+	\begin{definicija}
+		Za $n \in \mathbb{N},r,k\in \mathbb{N}\textbackslash \{0\}$ i $l_1,\ldots,l_r \in \mathbb{N}$ pišemo
+		\[
+			n \rightarrow (l_1,\ldots,\l_r)^k,
+		\]
+		ako za svako bojenje $\chi:[\underline{n}]^k\rightarrow \underline{r}$, postoji $i \in \underline{r}$ i $l_i$-elementni skup $T\subseteq \underline{n}$, tako da je $[T]^k \subseteq \chi^{-1}(i)$
+	\end{definicija}
+	\begin{teorema}[Remzijeva Teorema za obojene hipergrafove]
+		Neka $l_1,\ldots,l_r,k \in \mathbb{N}$. Tada postoji $n$, za koje važi
+		\[
+		n\rightarrow(l_1,\ldots,l_r)^k
+		\]
 	\end{teorema}
+
 	
 	\begin{teorema}[Remzijeva Teorema za beskonačne grafove]
-		Dopuniti ovo
+		Neka $k,r \in \mathbb{N}\textbackslash 0$.
+		\noindent
+		Tada za svako bojenje $\chi:[\mathbb{N}]^k\rightarrow \underline{r}$ postoje beskonačni skup $M\subseteq \mathbb{N}$ i $i\in \underline{r}$, takvi da 
+		\[
+			[M]^k\subseteq \chi^{-1}(i)
+		\]
 	\end{teorema}
 
 	Tačne vrednosti Remzijevih brojeva je izuzetno teško izračunati. Poznato je $R(l_1,1)= (1,l_2) = 1$ i $R(l_1,2)= (2,l_2) = l$, ali za $l_1,l_2 \geq 2$ je poznato samo 9  tačnih vrednosti Remzijevih brojeva. Poznata su razna ograničenja koja važe u opštem slučaju, dok su bolja ograničenja poznata samo za neke od vrednosti $l_1\leq 10, l_2\leq 15$.
