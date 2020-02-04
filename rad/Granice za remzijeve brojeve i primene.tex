@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage[croatian]{babel}
 \usepackage{graphicx}
+\usepackage{verbatim}
 \title{Granice za Remzijeve brojeve i primene}
 \date{15.1.2020}
 \author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
@@ -88,6 +89,14 @@
 		naziva se Remzijev broj i označavamo ga sa $R(l_1,l_2)$.
 	\end{definicija}
 	
+	\begin{definicija}
+		Najmanji broj $n$ za koji važi
+		\[
+		n\rightarrow(l_1,\ldots,l_r)
+		\]
+		naziva se Remzijev broj za obojene grafove i označavamo ga sa $R(l_1,\ldots,l_r)$.
+	\end{definicija}
+
 	Remzijeva teorema se može proširiti na hipergrafove, kao i na beskonačne grafove.
 	%dopuniti sa ostalim teoremama
 	
@@ -104,7 +113,13 @@
 		n\rightarrow(l_1,\ldots,l_r)^k
 		\]
 	\end{teorema}
-
+	
+	\begin{definicija}
+		Sa $R_k(l_1,\ldots,l_r)$ označavamo najmanji broj $n$ za koji važi
+		\[
+			n \rightarrow (l_1,\ldots,l_r)^k,
+		\]
+	\end{definicija}
 	
 	\begin{teorema}[Remzijeva Teorema za beskonačne grafove]
 		Neka $k,r \in \mathbb{N}\textbackslash 0$.
@@ -123,6 +138,7 @@
 		\caption{Poznate vrednosti i ograničenja Remzijevih brojeva\label{poznatiBrojevi}}
 	\end{figure}
 	
+	\begin{comment}
 		%\begin{table}[h]
 		%\centering
 		%\begin{tabular}{|c|c|c|c|c|c|c|}
@@ -142,10 +158,12 @@
 		%	\hline
 		%\end{tabular}
 		%\caption{Poznate vrednosi Remzijevih brojeva}
-	%\end{table}
+		%\end{table}
+	\end{comment}
+		
 	
 	
-	Iako je poznat samo mai broj tačnih vrednosti Remzijevih brojeva, postoje mnoge teoreme u vezi ograničenja za Remzijeve brojeve. 
+	Iako je poznat samo mali broj tačnih vrednosti Remzijevih brojeva, postoje mnoge teoreme u vezi ograničenja za Remzijeve brojeve. 
 	
 	U ovom radu ćemo prvo navesti neke od teorema u vezi gornjih ograničenja za Remzijeve brojeve (brojeva $U$, $R(l_1,l_2)\leq U$), zatim neke od teorema u vezi donjih ograničenja (brojeva $L$, $L \leq R(l_1,l_2)$). Na kraju ćemo videti neke od primena Remzijeve teoreme i njenih uopštenja u rešavanju raznih problema.
 	
@@ -154,6 +172,7 @@
 	\newpage
 	%ako mislite da nešto nije dobro ili se treba prepraviti, označite
 	\section{Gornja ograničenja za Remzijeve brojeve}
+	\begin{comment}
 	
 	\begin{teorema}
 		Dirihleov opšti princip govori o tome da ako su dati $n,k \in \mathbb{N} \setminus \{0\}$ gde je $l_1+ l_2, \ldots , + l_k \leq n+k-1$, za svako bojenje $\varphi : n \rightarrow r$ postoji $i \in k$, takvo da važi $|\varphi^{-1} \geq l_i|$.
@@ -178,7 +197,7 @@
 		Sada bi trebalo da sledi $n+k > n+k-1$ što je kontradikcija. Time je Dirihleov princip dokazan.
 	}
 	
-	
+	\end{comment}
 	
 	\begin{teorema}
 		\[
@@ -438,20 +457,20 @@
 		ima netrivijalna rešenja. (Rešenje je trvijalno ako $x\cdot y \cdot z\equiv 0\: (\mathrm{mod} \: p)$)
 	\end{teorema}
 	\dokaz{
-		Neka je $n_0=R(3)_m+1$. Neka je $g$ generator grupe $\mathbb{Z}_{p}^{*} $ ($g$ postoji zbog cikličnosti grupe $\mathbb{Z}_{p}^{*}$). Svaki elemenat $x\in\mathbb{Z}_{p}^{*}$ možemo zapisati $x$ kao $g^a$. Imamo $a=mj+i$, za $0\leq i < m$, tako da je $x=g^{mj+i}$. Posmatrajmo bojenje koje boji elemenat $x$ skupa $\mathbb{Z}_{p}^{*}$ u boju $i$ ako je $x=g^{mj+i}$. Na osnovu Šurove teoreme (\ref{sur}), postoje $a, b$ i $c$ obojeni istom bojom, takvi da važi $a+b=c$, odnoso eksponenti $a, b$ i $c$ su kongrueni po modulu $m$. Dakle,
+		Neka je $n_0=R(3)_m+1$. Neka je $g$ generator grupe $\mathbb{Z}_{p}^{*} $ ($g$ postoji zbog cikličnosti grupe $\mathbb{Z}_{p}^{*}$). Svaki elemenat $x\in\mathbb{Z}_{p}^{*}$ možemo zapisati $x$ kao $g^a$. Imamo $a=mj+i$, za $0\leq i < m$, tako da je $x=g^{mj+i}$. Posmatrajmo bojenje koje boji elemenat $x$ skupa $\mathbb{Z}_{p}^{*}$ u boju $i$ ako je $x=g^{mj+i}$. Na osnovu teoreme \ref{sur} postoje $a, b$ i $c$ obojeni istom bojom, takvi da važi $a+b=c$, odnoso eksponenti $a, b$ i $c$ su kongrueni po modulu $m$. Dakle,
 		\[
 		g^{mj_{a}+i}+g^{mj_{b}+i}=g^{mj_{c}+i}
 		\]
 		Neka su $x=g^{j_{a}}$, $y=g^{j_{b}}$ i $z=g^{j_{c}}$. Množenjem gornje jednačine sa $g^{-i}$ dobijamo $x^m+y^m=z^m$  
 	}
-	%happy ending T.(citirati happyEndingProof rad)
+
 	\begin{teorema}
 		Za svaki prirodan broj $n\geq 3$ postoji broj $N(n)$ takav da bilo koji skup od bar $N$ tačaka u ravni u opštem položaju sadrži konveksan $n$-tougao
 	\end{teorema}
 	\dokaz{
-		Za $n=4$ dokazaćemo da $N=5$ zadovoljava uslove. Posmatrajmo 5 tačaka $A,B,C,D \mathrm{i} E$. Ako je najmanji konveksni mnogougao petougao ili četvorougao, dokaz je trivijalan. U suprotnom, neka je najmanji takav mnogougao trougao $ABC$. $D$ i $E$ se onda nalaze unutar $ABC$. 2 tačke od $A$,$B$ i $C$ se moraju nalaziti sa jedne strane prave $DE$. Neka su to $A$ i $C$. Tada je $ACDE$ traženi četvorougao.
+		Za $n=4$ dokazaćemo da $N=5$ zadovoljava uslove. Posmatrajmo 5 tačaka $A,B,C,D$ i $E$. Ako je najmanji konveksni mnogougao petougao ili četvorougao, dokaz je trivijalan. U suprotnom, neka je najmanji takav mnogougao trougao $ABC$. $D$ i $E$ se onda nalaze unutar $ABC$. 2 tačke od $A$,$B$ i $C$ se moraju nalaziti sa jedne strane prave $DE$. Neka su to $A$ i $C$. Tada je $ACDE$ traženi četvorougao.
 		
-		Neka je $X$ skup od bar $R_4(n,5)$ tačaka u opštem položaju. Na osnovu Remzijeve teoreme za hipergrafove (\ref{RemziHiper}) znamo da je ovaj broj konačan. Obojimo sve četvoročlane podskupove tačaka u plavo ako je četvorougao koje obrazuju konveksan ili u crveno ako je konkavan. Pošto ima ukupno $R_{4}(n,5)$ tačaka, mora postojati ili $n$-točlani skup tačaka čiji su svi četvoročlani podskupovi plave boje (konveksni) ili petočlani skup tačaka čiji su svi četvoročlani podskupovi crvene boje. Dokazali smo da među 5 tačaka u opštem položaju mora postojati konveksan četvorougao, dakle mora postojati n-točlani skup tačaka tako da su svi četvorouglovi koje oni obrazuju knoveksni, odnosno konveksan n-toguao od n tačaka. Dakle traženi $N$ postoji i važi $N\leq R_{4}(n,5)$
+		Neka je $X$ skup od bar $R_4(n,5)$ tačaka u opštem položaju. Na osnovu Remzijeve teoreme za hipergrafove znamo da je ovaj broj konačan. Obojimo sve četvoročlane podskupove tačaka u plavo ako je četvorougao koje obrazuju konveksan ili u crveno ako je konkavan. Pošto ima ukupno $R_{4}(n,5)$ tačaka, mora postojati ili $n$-točlani skup tačaka čiji su svi četvoročlani podskupovi plave boje (konveksni) ili petočlani skup tačaka čiji su svi četvoročlani podskupovi crvene boje. Dokazali smo da među 5 tačaka u opštem položaju mora postojati konveksan četvorougao, dakle mora postojati n-točlani skup tačaka tako da su svi četvorouglovi koje oni obrazuju knoveksni, odnosno konveksan n-toguao od n tačaka. Dakle traženi $N$ postoji i važi $N\leq R_{4}(n,5)$
 		
 	}
 	
@@ -501,7 +520,6 @@
 		Chung, F.R.K., R.L. Graham, R.M. Wilson.
 		\newblock {A survey of Bounds for Classical Ramsey Numbers}
 		\newblock Journal of graph theory, 1989.
-		%posto nisam citirala, dodacu naknadno koje strane sam koristila u nekim delovima
 		
 		\bibitem{gornjeGr}
 		J.G.Kalbfleisch.
