@@ -74,6 +74,13 @@
 		\]
 		ako za svako bojenje $\chi:[\underline{n}]^2$ postoje $i\in \underline{r}$ i $T\subseteq \underline{n}$ sa $|T|=l_i$, takvi da je $[T]^2$ u odnosu na $\chi$ $i$-monohromatsko.	
 	\end{definicija}
+	\begin{teorema}
+	Ako je $n \rightarrow (l_1 - 1, l_2)$ i $m \rightarrow (l_1, l_2 - 1)$, tada važi da je i $n + m \rightarrow (l_1,l_2)$.
+	\dokaz{
+		Posmatrajmo graf $G$ sa $n + m$ čvorova, gde će nam jedna boja predstavljati povezane grane, a druga nepovezane i u njemu uočimo 					proizvoljan čvor $u$. Dokažimo da je on ili povezan sa $n$ čvorova ili nije povezan sa $m$ čvorova.  Ovo direktno sledi iz uopštenog Dirihleovog 				principa jer je $n + m \leq (n + m - 1) + 2 - 1$. Ako je čvor $u$ povezan sa $n$ čvorova tada, kako je $n \rightarrow (l_1 - 1, l_2)$ tih $n$ 				čvorova grade ili $\overline K_{l_2}$ ili $K_{l_1 - 1}$. U prvom slučaju je kraj dokaza, dok u drugom primetimo da kada dodamo čvor $u$ na 
+		$K_{l_1 - 1}$ dobijamo $K_{l_1}$. Analogno u slučaju kada čvor $u$ nije povezan sa m čvorova imamo ili $K_{l_1}$ ili $\overline K_{l_2 - 1}$, 				gde takođe dodavanjem $u$ na $\overline K_{l_2 - 1}$ dobijamo $\overline K_{l_2}$.
+	}
+	\end{teorema}
 	\begin{teorema}[Remzijeva Teorema za obojene grafove]
 		Neka $l_1,\ldots, l_r \in \mathbb{N}$. Tada postoji $n$, za koje važi
 		\[
