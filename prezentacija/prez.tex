@@ -1,0 +1,70 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage[croatian]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\theoremstyle{definition}
+
+\title{Granice za Remzijeve brojeve i primene}
+\date{15.1.2020}
+\author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
+
+\newtheorem{definicija}{Definicija}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{posledica}{Posledica}[teorema]
+\newtheorem{lema}[teorema]{Lema}
+\newcommand{\dokaz}[1]{\begin{proof}[Dokaz]#1\end{proof}}
+
+\begin{document}
+	
+\frame{\titlepage}
+
+\frame{
+	\frametitle{Struktura rada}
+	\begin{itemize}
+		\item Gornje granice za Remzijeve brojeve
+		\item Donje granice za Remzijeve brojeve
+		\item Primene Remzijeve teoreme
+	\end{itemize}
+}
+\frame{
+	\frametitle{Gornje granice za Remzijeve brojeve}
+	\begin{teorema}
+		\[
+		R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
+		\]
+	\end{teorema}
+	\begin{teorema}
+		Za $k \geq 2$ važi \newline
+		
+		$ R(l_1, l_2, ... , l_k) \leq 2 + \sum\limits_{i=1}^{k}(R(l_1, l_2 ... , l_{i-1}, l_i-1, l_{i+1}, ... , l_k)-1) $
+	\end{teorema}
+}
+\frame{
+	\frametitle{Donje granice za Remzijeve brojeve}
+	\begin{teorema}\label{dot1}
+		Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k, k) > n$.
+	\end{teorema}
+	\begin{teorema}\label{dot4}
+		Neka su dati prirodni brojevi $m, n \geq 2$. Tada važi $$R(m,n) \geq R(m,n-1) + 2m - 3.$$
+	\end{teorema}
+}
+\frame{
+	\frametitle{Primene Remzijeve teoreme}
+	\begin{teorema}\label{sur}
+		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
+		\[
+		x + y = z \: \mathrm{i} \: \chi(x)= \chi(y)=\chi(z)
+		\]
+	\end{teorema}
+	\begin{teorema}
+		Za svaki prirodan broj $n\geq 3$ postoji broj $N(n)$ takav da bilo koji skup od bar $N$ tačaka u ravni u opštem položaju sadrži konveksan $n$-tougao
+	\end{teorema}
+}
+\end{document}
