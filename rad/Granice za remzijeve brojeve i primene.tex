@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+ \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{hyperref}
 \usepackage[croatian]{babel}
@@ -207,18 +208,24 @@
 	\end{comment}
 	
 	\begin{teorema}
+		Za svako $l_1,l_2 \geq 2$ važi
 		\[
-		R(l_1,l_2) \leq R(l_2-1, l_1) + R(l_2, l_1-1)
+		R(l_1,l_2) \leq R(l_1-1, l_2) + R(l_1, l_2-1)
 		\]
 	\end{teorema}
 	\dokaz{
+		Iz definicije Remzijevih brojeva znamo da je $R(l_1 - 1,l_2) \rightarrow (l_1 - 1, l_2)$ i $R(l_1, l_2 - 1) \rightarrow (l_1, l_2 - 1)$, pa na osnovu
+		Teoreme 1.3 dobijamo da je $$R(l_1 - 1,l_2) + R(l_1, l_2 - 1) \rightarrow (l_1,l_2),$$ iz čega po definiciji $R(l_1,l_2)$ sledi nejednakost.
+	}
+	\begin{comment}
+	\dokaz{
+	
 		Iz (...) znamo da $R(2,l_1)=l_1$ i $R(2,l_2)=l_2$. Koristeći induciju potvrđujemo da ovo važi i za svako $t$ i $s$ takvo da $t\leq l_2$ i $s<l_2$ ili $s\leq l_1$ i $t<l_2$.
 		
 		Pretpostavimo sada suprotno, tj. da važi tvrđenje $R(l_1,l_2) \geq R(l_2-1, l_1) + R(l_2, l_1-1)$, odnosno da postoji graf sa $R(l_1,l_2)$ čvorova koji ne sadrži podgraf izomorfan sa $K_{l_2}$ niti podgraf izomorfan sa $K_{l_1}$.
 		
-		
 		Neka je $u$ proizvoljan broj čvorova grafa $G$, broj njemu susednih čvorova označićemo sa $N$, a broj nesusednih čvorova biće $M$.
-		To se drugačije može zapisati kao $M=V(G)-N_G(u)-{u}$.
+		To se drugačije može zapisati kao $M=V(G)-N_G(u)-{u}$. 
 		Kako ne bi važilo da graf $G$ sadrži podgraf izomorfan sa $K_{l_2-1}$  mora da važi $N\leq R(l_2-1, l_1)-1 $, a samim tim i $M \leq R(l_2, l_1-1)-1 $. 
 		Ukupan broj čvorova $n$ jednak je zbiru navedenog (čvora $u$, kao i njegovih susednih i nesusednih čvorova).
 		\[
@@ -231,14 +238,31 @@
 		n= R(l_2-1, l_1)+ R(l_2, l_1-1)-1
 		\]
 		Dobijeni izraz je kontradikcija, te sledi tačno tvrđenje ove teoreme.
-	}
 	
+	}
+	\end{comment}
 	\begin{teorema}
-		Ako su $R(l_2, l_1-1)$ i $R(l_2-1, l_1)$ parni brojevi, važi stroga nejednakost, odnosno: 
+		Ako su  $R(l_1 - 1, l_2)$ i $R(l_1, l_2 - 1)$ parni brojevi, za $l_1,l_2 \geq 2$ važi stroga nejednakost, odnosno: 
 		\[
-		R(l_1,l_2) < R(l_2-1, l_1) + R(l_2, l_1-1)
+		R(l_1,l_2) < R(l_1-1, l_2) + R(l_1, l_2-1)
 		\]
 	\end{teorema}
+	\dokaz{
+		Iz Teoreme 2.1 već znamo da je $R(l_1,l_2) \leq R(l_1-1, l_2) + R(l_1, l_2-1)$, pa treba još dokazati da
+		$R(l_1,l_2) \neq R(l_1-1, l_2) + R(l_1, l_2-1)$. \newline
+		Pretpotstavimo suprotno da je $R(l_1,l_2) = R(l_1-1, l_2) + R(l_1, l_2-1)$ i neka je $r_1 = R(l_1 - 1, l_2)$ i $r_2 = R(l_1, l_2 - 1)$.
+		Tada mora da postoji graf $G$ sa $r_1 + r_2 - 1$ čvorova koji ne sadrži ni $K_{l_1}$ ni $\overline K_{l_2}$ (u suprotnom bi važilo da je
+		$R(l_1,l_2) < R(l_1-1, l_2) + R(l_1, l_2-1) \implies$ kontradikcija). Uočimo proizvoljan čvor $v$ u grafu $G$. Na osnovu dokaza Teoreme 1.3 lako
+		je zaključiti da mora važiti 
+		\begin{gather}
+			\delta(v) \leq r_1 - 1 \\
+			r_1 + r_2 - 2 - \delta(v) \leq r_2 - 1
+		\end{gather} 
+		jer bi u suprotnom pronašli ili  $K_{l_1}$ ili  $\overline K_{l_2}$. Odavde dobijamo da je $\delta(v) = r_1 - 1$. Pošto je izbor čvora $v$ bio 
+		proizvoljan onda stepen svakog čvora u grafu mora biti takođe $r_1 - 1$. Ipak pošto $2 \nmid r_1 - 1$ i $2 \nmid r_1 + r_2 - 1$ dobijamo
+		$$2 \nmid \sum_{v \in V(G)}{\delta(v)} = (r_1 + r_2 - 1)(r_1 - 1),$$ što je u suprotnosti sa prvom teoremom teorije grafova (da je zbir svih 				stepena čvorova svakog grafa paran broj). Dakle takav graf ne postoji pa je pretpostavka bilo netačna, iz čega sledi tvrđenje.
+	}
+	\begin{comment}
 	\dokaz{
 		Uzmimo da su $R(l_1-1, l_2)$ i $R(l_1, l_2-1)$ parni brojevi. Posmatramo graf $G$ sa $n+1$ čvorova, odnosno $n=R(l_2-1, l_1)+ R(l_2, l_1-1)-1$.
 		Treba pokazati da postoji neki podgraf $M$ koji ima $l_2$ medjusobno povezanih ili podgraf $N$ sa $l_1$ medjusobno nepovezanih čvorova. Broj čvorova neparnog stepena je u svakom grafu paran, a kako su $R(l_2-1, l_2)$ i $R(l_2, l_1-1$ parni brojevi, n je neparan. Iz toga zaključujemo da graf $G$ sadrži barem jedan čvor parnog stepena. Uzmimo da je to proizvoljan čvor $v$. Ako je njegov stepen veći ili jednak $R(l_2-1,l_1)$ onda neki podgraf indukovan njegovim susednim čvorovima može sadržati novi podgraf sa $l_2-1$ povezanih čvorova (Ako njima dodamo povezani $v$ čvor, biće ih $l_2$, te dobijamo naš podrgaf $M$), ili $l$ nepovezanih čvorova (što je zapravo podgraf $N$). 
@@ -247,17 +271,21 @@
 		\newline
 		Time smo dokazali pretpostavku da sko su brojevi $R(l_1-1, l_2)$ i $R(l_1, l_2-1)$ parni, onda svaki graf sa $n+1$ čvorova sadrži ili $M$ ili $N$ podgraf. Iz toga sledi stroga nejednakost $R(l_1,l_2) < R(l_2-1, l_1) + R(l_2, l_1-1)$ jer je $R(l_1,l_2) \leq n$. 
 	}
-	
+	\end{comment}
 	
 	%.............
 	
 	
 	\begin{teorema}
+		Za sve $l_1,l_2 \geq 2$ važi
 		\[R(l_1,l_2) \leq {l_1+l_2-2\choose l_1-1} 
 		\]
 	\end{teorema}
 	\dokaz{
-		Kod ovog dokaza koristićemo indukciju. Naša baza biće da dokažemo da nejednakost važi za $l_1=l_2=2$, odnosno
+		Kod ovog dokaza koristićemo matematičku indukciju. %Naša baza biće da dokažemo da nejednakost važi za $l_1=l_2=2$, odnosno
+		\begin{itemize}
+		\item Baza indukcije \newline
+		Naša baza biće da dokažemo da nejednakost važi za $l_1=l_2=2$, odnosno 
 		\[ R(2,2) \leq {2+2-2 \choose 2-1}
 		\]
 		\[
@@ -266,15 +294,18 @@
 		\[
 		2 \leq 2
 		\]
-		Pretpostavimo sada da važi $\forall(l_1,l_2)$  pri čemu je $l_1+l_2 \geq 4$.
+		\item Indukcijska hipoteza \newline
+		Pretpostavimo sada da tvrđenje važi za sve brojeve $x$ i $y$, gde $x \leq l_1$, $y \leq l_2$ i bar jedna nejednakost je stroga.
 		
-		\[l_1,l_2 \geq 2
-		\]
+		%\[l_1,l_2 \geq 2
+		%\]
+		%\[
+		%l_1+l_2=n+1
+		%\]
+		\item Indukcijski korak \newline
+		Iz Teoreme 2.1 znamo da je
 		\[
-		l_1+l_2=n+1
-		\]
-		\[
-		R(l_1,l_2) \leq R(l-1, l_2) + R(l_1, l_2-1)
+		R(l_1,l_2) \leq R(l_1-1, l_2) + R(l_1, l_2-1)
 		\]
 		\[
 		R(l_1,l_2) \leq {{l_1-1+l_2-2 \choose l_1-1-1} + {l_1+l_2-1-2 \choose l_1-1}}
@@ -285,8 +316,10 @@
 		\[
 		R(l_1,l_2) \leq {l_1+l_2-2 \choose l_1-1}
 		\]
-		Prvu nejednakost dokazali smo %dodaću na kraju
-		, a samu jednakost upotreom Paskalovog identiteta ${n \choose l_2} = {n-1 \choose l_2-1} + {n-1 \choose l_2}$.
+		%Prvu nejednakost dokazali smo %dodaću na kraju
+		%, a samu 
+		Gde poslednja nejednakost sledi primenom poznatog Paskalovog identiteta ${n \choose k} = {n-1 \choose k - 1} + {n-1 \choose k}$.
+		\end{itemize}
 	}
 	%...............
 	
