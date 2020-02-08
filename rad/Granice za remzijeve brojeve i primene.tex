@@ -10,6 +10,7 @@
 \usepackage[croatian]{babel}
 \usepackage{graphicx}
 \usepackage{verbatim}
+\usepackage{hyperref}
 \title{Granice za Remzijeve brojeve i primene}
 \date{15.1.2020}
 \author{Mihailo Milenković, Dejan Gjer, Bojana Čakarević}
@@ -30,7 +31,11 @@
 	
 	\newpage
 	
-	\section{Uvod}
+	\section*{Predgovor}
+	
+	U ovom radu ćemo prvo navesti neke od teorema u vezi granica za Remzijeve brojeve, kao i primene Remzijevih brojeva u raznim oblastima. U \hyperref[uvod]{prvom poglavlju} ćemo navesti neke od važnijih teorema Remzijeve teorije, koje služe kao osnova za teoreme koje su dokazane u ovom radu. U \hyperref[gornjeGranicePoglavlje]{drugom poglavlju} ćemo dokazati neke od najvažnijih teorema u vezi gornjih ograničenja za Remzijeve brojeve. U \hyperref[donjeGranicePoglavlje]{trećem poglavlju} ćemo dokazati neke od važnijih teorema u vezi donjih ograničenja za Remzijeve brojeve. Na kraju, u \hyperref[primenePoglavlje]{četvrtom poglavlju} ćemo videti neke od primena Remzijeve teoreme i njenih uopštenja u rešavanju raznih problema.
+	
+	\section{Uvod} \label{uvod}
 	
 	Remzijeva teorija je oblast matematike koja se bavi ulsovima pod kojim se red mora pojaviti. Najjednostavnija teorema ovog tipa jeste Dirihleov princip:
 	
@@ -171,17 +176,16 @@
 		
 	
 	
-	Iako je poznat samo mali broj tačnih vrednosti Remzijevih brojeva, postoje mnoge teoreme u vezi ograničenja za Remzijeve brojeve. 
+	Iako je poznat samo mali broj tačnih vrednosti Remzijevih brojeva, postoje mnoge teoreme u vezi ograničenja za Remzijeve brojeve. Neke od njih ćemo dokazati u sledećim poglavljima.
 	
-	U ovom radu ćemo prvo navesti neke od teorema u vezi gornjih ograničenja za Remzijeve brojeve (brojeva $U$, $R(l_1,l_2)\leq U$), zatim neke od teorema u vezi donjih ograničenja (brojeva $L$, $L \leq R(l_1,l_2)$). Na kraju ćemo videti neke od primena Remzijeve teoreme i njenih uopštenja u rešavanju raznih problema.
 	
 	
 	
 	\newpage
 	
-	\section{Gornja ograničenja za Remzijeve brojeve}
+	\section{Gornja ograničenja za Remzijeve brojeve} \label{gornjeGranicePoglavlje}
 	
-	U sledećem delu rada obuhvatićemo četiri teoreme koje govore o gornjim  ograničenjima Remzijevih brojeva pri bojenju grafova sa dve ili više boja.
+	U sledećem delu rada obuhvatićemo četiri teoreme koje govore o gornjim  ograničenjima Remzijevih brojeva pri bojenju grafova sa dve ili više boja. Neke od ovih dokaza, kao i mnoge druge u vezi gornjih granica Remzijevih brojeva možete naći u radovima \cite{mathPaulErdos}, \cite{remziGr} i \cite{gornjeGr}. 
 	
 	\begin{comment}
 	\begin{teorema}
@@ -360,7 +364,11 @@
 	}
 	%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	\section{Donja ograničenja za Remzijeve brojeve}
+	\section{Donja ograničenja za Remzijeve brojeve} \label{donjeGranicePoglavlje}
+	
+	U ovom poglavlju ćemo dokazati ne
+	ke od bitnijih dokaza u vezi donjih ograničenja Remzijevih brojeva. Dokaz teoreme \ref{dot1} možete naći u radu \cite{theBook}, a ove dokaze, kao i mnoge druge u vezi donjih ograničenja Remzijevih brojeva možete naći u radovima \cite{mathPaulErdos} i \cite{remziGr}.
+	
 	\begin{teorema}\label{dot1}
 		Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k, k) > n$.
 		\dokaz{
@@ -471,8 +479,10 @@
 	
 	%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	\section{Primene Remzijeve teoreme}
+	\section{Primene Remzijeve teoreme} \label{primenePoglavlje}
 	%sur i primena sura(citirati Sura)
+	U ovom poglavlju ćemo videti primene Remzijeve teorije i njenih uopštenja u teoriji brojeva, rešavanju problema u vezi konveksnih mnogouglova i nalaženja idempotentnih elemenata polugrupe. Dokaz teoreme \ref{happyEnding} možete naći u radu \cite{happyEndingProof}, dok dokaz teorema \ref{sur} i \ref{sur2}, kao i mnoge druge primene Remzijeve teoreme možete naći u radu \cite{RamseyPrimene}.
+	
 	\begin{teorema}\label{sur}
 		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
 		\[
@@ -506,7 +516,7 @@
 		Neka su $x=g^{j_{a}}$, $y=g^{j_{b}}$ i $z=g^{j_{c}}$. Množenjem gornje jednačine sa $g^{-i}$ dobijamo $x^m+y^m=z^m$  
 	}
 
-	\begin{teorema}
+	\begin{teorema} \label{happyEnding}
 		Za svaki prirodan broj $n\geq 3$ postoji broj $N(n)$ takav da bilo koji skup od bar $N$ tačaka u ravni u opštem položaju sadrži konveksan $n$-tougao
 	\end{teorema}
 	\dokaz{
