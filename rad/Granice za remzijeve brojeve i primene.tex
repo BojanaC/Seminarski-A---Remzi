@@ -87,7 +87,7 @@
 		$K_{l_1 - 1}$ dobijamo $K_{l_1}$. Analogno u slučaju kada čvor $u$ nije povezan sa m čvorova imamo ili $K_{l_1}$ ili $\overline K_{l_2 - 1}$, 				gde takođe dodavanjem $u$ na $\overline K_{l_2 - 1}$ dobijamo $\overline K_{l_2}$.
 	}
 	\end{teorema}
-	\begin{teorema}[Remzijeva Teorema za obojene grafove]
+	\begin{teorema}[Remzijeva Teorema za obojene grafove]\label{remziViseBoja}
 		Neka $l_1,\ldots, l_r \in \mathbb{N}$. Tada postoji $n$, za koje važi
 		\[
 		n\rightarrow(l_1,\ldots,l_r)
@@ -501,6 +501,12 @@
 		Imamo $x,y,z\in \{1,\ldots,n\}$ i $x-y=i_1-i_2+i_2-i_3=i_1-i_3=z$.
 	}
 	
+	\begin{definicija}
+		Skup generatora $\{g_1,\ldots,g_n\}$ je skup elemenata grupe $G$takvih da se primenom operacije grupe na generatore mogu dobiti svi ostali elementi grupe. Kažemo da $\{g_1,\ldots,g_n\}$ generiše grupu $G$. Ako postoji $g$ takvo da je $\{g\}$ skup generatora grupe $G$, kažemo da je $G$ ciklična.
+	\end{definicija}
+	\begin{lema}
+		Grupa $\mathbb{Z}_{p}^{*}$, čiji je skup elemenata $\{0,1,\ldots,p-1\}$ i čija je operacija množenje po modulu $p$, gde je $p$ prost broj je ciklična.
+	\end{lema}
 	\begin{teorema} \label{sur2}
 		Za sve $m \in \mathbb{N} \textbackslash \{0\}$ postoji neko $n_{0} \in \mathbb{N}$, takvo da za sve proste brojeve $p>n_{0}$ jednačina
 		\[
@@ -542,16 +548,19 @@
 	\begin{definicija}
 		Element $s$ polugrupe $\mathbf{S}=(S,\cdot)$ je idempotentan, ako je $s\cdot s=s$ 
 	\end{definicija}
+	\begin{definicija}
+		Reč polugrupe $S$ je izraz oblika $s_1^{n_1} s_2^{n_2} \ldots s_k^{n_k} \: ,s_1,\ldots,s_k \in ~S ,\\ n_1,\ldots,n_k \in \mathbb{N} $, pri čemu $s_i$ i $s_j, i\neq j$ ne moraju biti različiti.
+	\end{definicija}
 	\begin{teorema}
 		Neka je $\mathbf{S}=(S,\cdot)$ konačna polugrupa. Tada $\mathbf{S}$ sadrži bar jedan idempotentan element.
 	\end{teorema}
 	\dokaz{
 		%treba dodati jos definicija
-		Neka je $S$ konačna polugrupa čiji je konačan generišući skup $A$. Izaberimo beskonačnu reč $a_1 a_2\ldots$ nad $A$. Posmatrajmo bojenje  grafa $0,1,2,\ldots$ koje boji granu izmedju $i$ i $j$, $i\leq j$ u sliku $a_{i+1} \ldots a_j$ u $S$. Na osnovu Remzijeve teoreme za beskonačne grafove (\ref{RemziBesk}), moraju postojati $i<j<k$ izmedju kojih se nalaze grane iste boje, odnosno
+		Neka je $S$ konačna polugrupa čiji je konačan generišući skup $A$. Izaberimo reč $a_1 a_2\ldots$ dužine $n_0=R(3)_{|S|}+1$ nad $A$. Posmatrajmo bojenje  grafa čiji je skup čvorova $\underline{n}$ koje boji granu izmedju $i$ i $j$, $i\leq j$ u vrednost reči $a_{i+1} \ldots a_j$ u $S$. Na osnovu teoreme \ref{remziViseBoja}, moraju postojati $i<j<k$ izmedju kojih se nalaze grane iste boje, odnosno
 		\[
 		a_{i+1}\ldots a_j=a_{j+1}\ldots a_k=a_{i+1}\ldots a_k=	a_{i+1}\ldots a_j\cdot 	a_{j+1}\ldots a_k=a_{i+1}\ldots a_j\cdot 	a_{i+1}\ldots a_j.
 		\]
-		Dakle, elemenat $a_{i+1}\ldots a_j$ je idempotentan.
+		Dakle, elemenat polugrupe čija je vrednost $a_{i+1}\ldots a_j$ je idempotentan.
 		
 	}
 	\newpage
