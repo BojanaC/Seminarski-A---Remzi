@@ -366,8 +366,9 @@
 	
 	\section{Donja ograničenja za Remzijeve brojeve} \label{donjeGranicePoglavlje}
 	
-	U ovom poglavlju ćemo dokazati ne
-	ke od bitnijih dokaza u vezi donjih ograničenja Remzijevih brojeva. Dokaz teoreme \ref{dot1} možete naći u radu \cite{theBook}, a ove dokaze, kao i mnoge druge u vezi donjih ograničenja Remzijevih brojeva možete naći u radovima \cite{mathPaulErdos} i \cite{remziGr}.
+	U ovom poglavlju ćemo dokazati neke
+	od bitnijih dokaza u vezi donjih ograničenja Remzijevih brojeva. Prve dve teoreme dokazuju se preko verovatnoće, dok se ostale dokazuju 				konstrukcijom pogodnih grafova.
+	Dokaz teoreme \ref{dot1} možete naći u radu \cite{theBook}, a ove dokaze, kao i mnoge druge u vezi donjih ograničenja Remzijevih brojeva možete naći u radovima \cite{mathPaulErdos} i \cite{remziGr}.
 	
 	\begin{teorema}\label{dot1}
 		Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k, k) > n$.
@@ -385,6 +386,8 @@
 			$K_k$ nije garantovano, tj. postoji bojenje koje ga ne sadrži i odatle da je $R(k,k) > n$.
 		}
 	\end{teorema}
+	Naredne dve posledice koje se izvode preko prethodno dokazane teoreme pokazuju nam da kvadratni Remzijevi brojevi rastu eksponencijalno. Nije teško
+	uveriti se da to važi i za sve Remzijeve brojeve, pa ovo objašnjava njihov brz rast i zašto je poznat samo mali broj Remzijevih brojeva.
 	\begin{posledica}\label{pos1}
 	Za svako $k \geq 3$ važi $$R(k,k) > 2^{\frac{k}{2}}.$$
 	\dokaz{
@@ -418,6 +421,7 @@
 			$$R(k,k) > \frac{k 2^{\frac{k}{2}}}{e\sqrt{2}}$$ što  je i trebalo dokazati.
 		}
 	\end{posledica}
+	Sada ćemo dati uopštenje teoreme \ref{dot1} na sve Remzijeve brojeve, ne samo kvadratne.
 	\begin{teorema}\label{dot2}
 		Neka su dati prirodni brojevi $n$, $k$ i $l$, takvi da $n \geq{k} > 0$ i $n \geq{l} > 0$. Ako za neki broj $p$, $0 \leq{p} \leq 1$ važi
 		$$\binom{n}{k}p^{\binom{k}{2}} + \binom{n}{l}(1 - p)^{\binom{l}{2}} < 1$$ onda je $R(k,l) > n$
@@ -429,6 +433,7 @@
 			Ako postoji $p$ za koji je krajnji izraz manji od 1, onda zaključujemo da postoji $K_n$  koji sadrži potpuno crveni $K_k$ ili potpuno plavi $K_l$, pa mora biti $R(k,l)>n$.
 		}
 	\end{teorema}
+	Slede dve teoreme koje predstavljaju vezu između više Remzijevih brojeva. Njihove dokaze moćete pogledati i u \cite{Uzastopni Remzijevi brojevi}.
 	\begin{teorema}\label{dot3}
 		Neka su dati prirodni brojevi $n$, $m$ i $k$ tako da je $1\leq k \leq n - 2$. Tada je $$R(m,n) \geq R(m, n - k) + R(m, k + 1) - 1.$$ 
 		\dokaz{
@@ -440,6 +445,7 @@
 			sadrži crveni $K_m$. Sa druge strane najveći monohromatski plavi kompletan podgraf nema više od $(n - k - 1) + (k + 1 - 1) = n - 1$ čvorova, pa 			graf $G$ sigurno ne sadrži ni plavi $K_n$. Odavde sledi $R(m,n) > r_1 + r_2 - 2$ odakle dobijamo traženu nejednakost. 
 		}
 	\end{teorema}
+	Ova posledica nam daje vezu dva uzastopna Remzijeva broja.
 	\begin{posledica}\label{pos3}
 		Neka su dati prirodni brojevi $m$ i $n \geq 3$. Tada je
 		$$R(m,n) \geq R(m, n - 1) + m - 1.$$
@@ -447,6 +453,9 @@
 			Direktnom zamenom $k = 1$ u prethodnoj teoremi dobijamo izraz.
 		}
 	\end{posledica}
+	Granicu za uzastopne Remzijeve brojeve koju smo sad dobili možemo još malo poboljšati narednom teoremom. Ipak primetimo da nam ona daje 			linearnu, a ne eksponencijalnu vezu kako smo prethodno dobili u posledicama \ref{pos1} i \ref{pos2}, pa se u klasičnoj Remzijevoj teorijie retko koristi 
+	ova teorema,
+	ali nalaze svoju primenu za granice kod generalizovanih Remzijevih brojeva (ako su $G$ i $H$ grafovi, $R(G,H)$ definišemo kao $R(m,n)$, ali tako da 			su $G$ i $H$ na mestu $K_m$ i $K_n$)
 	\begin{teorema}\label{dot4}
 		Neka su dati prirodni brojevi $m, n \geq 2$. Tada važi $$R(m,n) \geq R(m,n-1) + 2m - 3.$$
 		\dokaz{
@@ -594,7 +603,11 @@
 		
 		\bibitem{RamseyPrimene}
 		M. Steed.
-		\newblock{Some theorems and applications of Ramsey Theory}		
+		\newblock{Some theorems and applications of Ramsey Theory}
+	
+		\bibitem{Uzastopni Remzijevi brojevi}
+		S. A. Burr, P. Erdos, R. J. Faudree, R.H. Schelp
+		\newblock{On the Diffeence of Consecutive Ramsey Numbers} 		
 		
 		
 	\end{thebibliography}	
