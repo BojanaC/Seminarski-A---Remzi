@@ -34,6 +34,29 @@
 	\end{itemize}
 }
 \frame{
+	\frametitle{Remzijevi brojevi}
+	
+	\begin{definicija}
+		Za skup $X$ i prirodan broj $k>0$ definišemo
+		\[
+		[X]^k :=\{Y\subseteq X | \:|Y|=k\}.
+		\]
+		Pišemo
+		\[
+		n\rightarrow (l_1,\ldots,l_r)
+		\]
+		ako za svako bojenje $\chi:[\underline{n}]^2$ postoje $i\in \underline{r}$ i $T\subseteq \underline{n}$ sa $|T|=l_i$, takvi da je $[T]^2$ u odnosu na $\chi$ $i$-monohromatsko.	
+	\end{definicija}
+
+	\begin{definicija}
+		Najmanji broj $n$ za koji važi
+		\[
+		n\rightarrow(l_1,l_2)
+		\]
+		naziva se Remzijev broj i označavamo ga sa $R(l_1,l_2)$.
+	\end{definicija}
+}
+\frame{
 	\frametitle{Gornje granice za Remzijeve brojeve}
 	\begin{teorema}
 		\[
@@ -51,8 +74,8 @@
 	\begin{teorema}\label{dot1}
 		Neka su dati prirodni brojevi $n$ i $k$, takvi da $n \geq{k} > 0$ .Ako je $$\binom{n}{k}2^{1 - \binom{k}{2}} < 1 ,$$  onda važi $R(k, k) > n$.
 	\end{teorema}
-	\begin{teorema}\label{dot4}
-		Neka su dati prirodni brojevi $m, n \geq 2$. Tada važi $$R(m,n) \geq R(m,n-1) + 2m - 3.$$
+	\begin{teorema}\label{dot3}
+		Neka su dati prirodni brojevi $n$, $m$ i $k$ tako da je $1\leq k \leq n - 2$. Tada je $$R(m,n) \geq R(m, n - k) + R(m, k + 1) - 1.$$
 	\end{teorema}
 }
 \frame{
