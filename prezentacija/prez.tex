@@ -26,14 +26,6 @@
 \frame{\titlepage}
 
 \frame{
-	\frametitle{Struktura rada}
-	\begin{itemize}
-		\item Gornje granice za Remzijeve brojeve
-		\item Donje granice za Remzijeve brojeve
-		\item Primene Remzijeve teoreme
-	\end{itemize}
-}
-\frame{
 	\frametitle{Remzijevi brojevi}
 	
 	\begin{definicija}
@@ -43,18 +35,26 @@
 		\]
 		Pišemo
 		\[
-		n\rightarrow (l_1,\ldots,l_r)
+		n\rightarrow (l_1,\ldots,l_r)^k
 		\]
-		ako za svako bojenje $\chi:[\underline{n}]^2$ postoje $i\in \underline{r}$ i $T\subseteq \underline{n}$ sa $|T|=l_i$, takvi da je $[T]^2$ u odnosu na $\chi$ $i$-monohromatsko.	
+		ako za svako bojenje $\chi:[\underline{n}]^k$ postoje $i\in \underline{r}$ i $T\subseteq \underline{n}$ sa $|T|=l_i$, takvi da je $[T]^k$ u odnosu na $\chi$ $i$-monohromatsko.	
 	\end{definicija}
 
 	\begin{definicija}
 		Najmanji broj $n$ za koji važi
 		\[
-		n\rightarrow(l_1,l_2)
+		n\rightarrow(l_1,\ldots,l_r)^k
 		\]
-		naziva se Remzijev broj i označavamo ga sa $R(l_1,l_2)$.
+		naziva se Remzijev broj i označavamo ga sa $R_k(l_1,\ldots,l_r)$.
 	\end{definicija}
+}
+\frame{
+	\frametitle{Struktura rada}
+	\begin{itemize}
+		\item Gornje granice za Remzijeve brojeve
+		\item Donje granice za Remzijeve brojeve
+		\item Primene Remzijeve teoreme
+	\end{itemize}
 }
 \frame{
 	\frametitle{Gornje granice za Remzijeve brojeve}
@@ -81,7 +81,7 @@
 \frame{
 	\frametitle{Primene Remzijeve teoreme}
 	\begin{teorema}\label{sur}
-		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n_{0} \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
+		Za svako $k \in \mathbb{N}\textbackslash \{0\}$  postoji neko $n \in \mathbb{N}$, takvo da za svako bojenje $\chi:\underline{n} \rightarrow \underline{k}$ postoje brojevi $x, y, z \in \underline{n}$ sa osobinom 
 		\[
 		x + y = z \: \mathrm{i} \: \chi(x)= \chi(y)=\chi(z)
 		\]
